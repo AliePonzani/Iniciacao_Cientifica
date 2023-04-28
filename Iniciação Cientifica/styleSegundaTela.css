@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: purple;
+    justify-content: space-around;
+}
+
+.container {
+    display: grid;
+    justify-content: center;
+    margin: 0 300px 0 300px;
+}
+
+.texto,
+.passos {
+    display: grid;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.equacao {
+    width: 180px;
+}
+
+span {
+    margin: 20px;
+}
+
+.passos {
+    margin-left: -40px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+p,
+li {
+    font-size: 18px;
+}
+
+button {
+    font-size: 30px;
+}
+
+li {
+    margin: 25px;
+}
+
+.passos p {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 5px;
+    border-left: 1px solid rgb(100, 98, 98);
+    border-right: 1px solid rgb(100, 98, 98);
+}
+
+th {
+    border-bottom: 1px solid rgb(100, 98, 98);
+}
+
+.tabelaMatriz {
+    display: flex;
+    margin: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+td,
+th {
+    padding: 10px;
+    border-radius: 12%;
+}
+
+@keyframes destaque {
+    from{
+        background-color: white;
+    }
+    to{
+        background-color: purple;
+        color: white;
+    }
+}

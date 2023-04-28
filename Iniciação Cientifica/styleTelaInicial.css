@@ -1,0 +1,214 @@
+html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: purple;
+    justify-content: space-around;
+    
+  }
+  
+  #titulo {
+    background-color: white;
+    margin: 0;
+    padding: 10px;
+    width: 100vw;
+    text-align: center;
+    font-size: max(18px, 2.5vw);
+  }
+  
+  .content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .conteudoDireita{
+    grid-area: direita;
+  }
+  
+  .conteudoEsquerda {
+    grid-area: esquerda;
+  }
+  
+  .conteudoEsquerda, .conteudoDireita {
+    /* display: grid; */
+    width: 550px;
+    min-width: 350px;
+    height: auto;
+    margin: 3%;/*margem da borda para os conteudos*/
+    /* border: 15px solid white; */
+    background-color: white;
+    border-radius: 30px;
+    font-size: max(13px, 17px);
+  }
+  
+  pre {
+    font-size: 29px;
+  }
+  
+  .texto {
+    margin: 29px;
+  }
+  
+  td{
+    max-width: 100px;
+    white-space: nowrap;
+  }
+  
+  table input{
+    background: none;
+    border: 1px solid rgb(179, 178, 178);
+    width: 50px;
+    height: 30px;
+    text-align: right;
+    font-size: 20px;
+  }
+  
+  .campos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .campos button {
+    height: 40px;
+    border-style: groove;
+    cursor: pointer;
+  }
+  
+  #resultado {
+    visibility: hidden;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  #resultado div{
+    width: 50px;
+    height: 30px;
+    margin-top: -3px;
+    font-size: 20px;
+  }
+  
+  #cliqueAqui {
+    background: none;
+    color: purple;
+    border-style: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  li{
+    margin-left: 40px;
+  }
+  
+  
+  
+  
+  
+  /* 
+  .content {
+    background-color: purple;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+  }
+  
+  @media (min-width: 48em) {
+    .content {
+      display: grid;
+      grid-template-columns: [container-start] repeat(4, auto) [container-end] 1fr;
+      grid-template-rows: [container-start] 50px auto [container-end] 50px 200px;
+      grid-template-areas:
+        "titulo titulo titulo titulo"
+        "esquerda esquerda direita direita"
+      ;
+      grid-gap: 3rem;
+     }
+  }
+  
+  
+  
+  pre {
+    font-size: 29px;
+  }
+  
+  .campos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  table input {
+    background: none;
+    border: none;
+    border-bottom: solid rgb(159, 159, 159);
+    width: 3vw;
+    min-width: 50px;
+    height: 3vh;
+    text-align: right;
+    font-size: 20px;
+  }
+  
+  .conteudoEsquerda, .conteudoDireita {
+    width: 400px;
+    background-color: white;
+    margin: 7% 12% 0 12%;
+    border: 25px solid white;
+    border-radius: 30px;
+    font-size: max(13px, 1vw);
+  }
+  
+  .conteudoEsquerda {
+    grid-area: esquerda;
+  
+  }
+  
+  .conteudoDireita {
+    grid-area: direita;
+  }
+  
+  #resultado {
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #resultado input{
+    background: none;
+    border: none;
+    width: 50px;
+    height: 30px;
+    font-size: 25px;
+  }
+  
+  #cliqueAqui {
+    background: none;
+    border-style: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  #texto2 {
+    margin-top: -1px;
+  }
+  
+  .campos button {
+    height: 40px;
+    border-style: groove;
+    cursor: pointer;
+  }  */
