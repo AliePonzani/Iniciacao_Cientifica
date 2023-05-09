@@ -23,10 +23,27 @@ class Celula {
         });
     }
 }
+var teste = 1;
+
+function Chamar(){
+    let resultado = document.getElementById('teste');
+    resultado.innerHTML = "teste";
+
+    var valor = JSON.parse(sessionStorage.getItem('meusValores'));
+
+    for(var i in valor){
+        let p = document.createElement('p');
+        p.innerHTML = valor[i];
+        resultado.append(p);
+    }
+}
 
 
 window.onload = function () {
 
+    alert("função funcionando");
+
+    
     (async function () {
         while (true) {
             const celulas = [];
