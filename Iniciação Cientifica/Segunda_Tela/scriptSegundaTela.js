@@ -84,7 +84,7 @@ function Chamar() {
     resultado.innerHTML = `${valor.aX}x + ${valor.aY}y + ${valor.aZ}z = ${valor.aN}<br>${valor.bX}x + ${valor.bY}y + ${valor.bZ}z = ${valor.bN}<br>${valor.cX}x + ${valor.cY}y + ${valor.cZ}z = ${valor.cN}`;
     
     
-    let aX = document.getElementsByName('aX');
+    let aX = document.getElementsByClassName('aX');
     let bX = document.getElementsByClassName('bX');
     let cX = document.getElementsByClassName('cX');
     let aY = document.getElementsByClassName('aY');
