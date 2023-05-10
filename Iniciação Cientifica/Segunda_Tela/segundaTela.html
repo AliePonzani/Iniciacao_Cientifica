@@ -22,7 +22,7 @@
                 usando a Regra de Cramer, seguimos estes passos:</p>
         </div>
         <ol>
-            <div class="passos">
+            <div class="passos"><!--Matriz da equação-->
                 <li>Escrevemos o sistema de equações na forma matricial:
                     <div class="tabelaMatriz">
                         <div id="equacao">
@@ -38,20 +38,20 @@
         
                             </thead>
                             <tbody>
-                                <tr><!--linha 1-->
-                                    <td id="aX">aX</td><!--coluna de x-->
-                                    <td id="bY">bY</td><!--coluna de y-->
-                                    <td id="cZ">cZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="aX">aX</td>
+                                    <td class="aY">bY</td>
+                                    <td class="aZ">cZ</td>
                                 </tr>
                                 <tr><!--coluna de y-->
-                                    <td id="eX">eX</td><!--coluna de x-->
-                                    <td idclass="fY">fY</td><!--coluna de y-->
-                                    <td id="gZ">gZ</td><!--coluna de z-->
+                                    <td class="bX">eX</td>
+                                    <td class="bY">fY</td>
+                                    <td class="bZ">gZ</td>
                                 </tr>
                                 <tr><!--coluna de z-->
-                                    <td id="iX">iX</td><!--coluna de x-->
-                                    <td id="jY">jY</td><!--coluna de y-->
-                                    <td id="kZ">kZ</td><!--coluna de z-->
+                                    <td class="cX">iX</td>
+                                    <td class="cY">jY</td>
+                                    <td class="cZ">kZ</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,13 +61,13 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td id="dN">dN</td><!--coluna de N-->
+                                    <td class="aN">dN</td>
                                 </tr>
                                 <tr>
-                                    <td id="hN">hN</td><!--coluna de N-->
+                                    <td class="bN">hN</td>
                                 </tr>
                                 <tr>
-                                    <td id="lN">lN</td><!--coluna de N-->
+                                    <td class="cN">lN</td>
                                 </tr>
         
                             </tbody>
@@ -77,14 +77,14 @@
             </div>
     
     
-            <div class="passos">
+            <div class="passos"><!--Matriz do Determinante-->
                 <li>Agora vamos calcular o determinante da matriz, para isso colocaremos os coeficientes das
                     incógnitas X e Y no lugar de N, depois multiplicamos os valores das transversais e depois somamos os
                     valores
                     de cada trasversal da esquerda pra direita e depois da dreita para a esquerda, tendo esses valores,
                     subtraimos um pelo outro , ficará assim:
                     <div class="tabelaMatriz">
-                        <table class="matriz_D">
+                        <table> 
                             <thead>
                                 <th>x</th>
                                 <th>y</th>
@@ -92,21 +92,21 @@
         
                             </thead>
                             <tbody>
-                                <tr><!--linha 1-->
-                                    <td class="_0_0">aX</td><!--coluna de x-->
-                                    <td class="_0_1">bY</td><!--coluna de y-->
-                                    <td class="_0_2">cZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="aX" name="aX">teste</td>
+                                    <td class="aY">bY</td>
+                                    <td class="aZ">cZ</td>
         
                                 </tr>
-                                <tr><!--linha 2-->
-                                    <td class="_1_0">eX</td><!--coluna de x-->
-                                    <td class="_1_1">fY</td><!--coluna de y-->
-                                    <td class="_1_2">gZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="bX">eX</td>
+                                    <td class="bY">fY</td>
+                                    <td class="bZ">gZ</td>
                                 </tr>
-                                <tr><!--linha 3-->
-                                    <td class="_2_0">iX</td><!--coluna de x-->
-                                    <td class="_2_1">jY</td><!--coluna de y-->
-                                    <td class="_2_2">kZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="cX">iX</td>
+                                    <td class="cY">jY</td>
+                                    <td class="cZ">kZ</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -117,23 +117,26 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="_0_3">aX</td><!--coluna de x-->
-                                    <td class="_0_4">bY</td><!--coluna de y-->
+                                    <td class="aX">aX</td>
+                                    <td class="aY">bY</td>
                                 </tr>
                                 <tr>
-                                    <td class="_1_3">eX</td><!--coluna de x-->
-                                    <td class="_1_4">fY</td><!--coluna de y-->
+                                    <td class="bX">eX</td>
+                                    <td class="bY">fY</td>
                                 </tr>
                                 <tr>
-                                    <td class="_2_3">iX</td><!--coluna de x-->
-                                    <td class="_2_4">jY</td><!--coluna de y-->
+                                    <td class="cX">iX</td>
+                                    <td class="cY">jY</td>
                                 </tr>
                             </tbody>
         
                         </table>
         
                     </div>
-                    <p>D= ((aX*fY*kZ)+(bY*gZ*iX)+(cZ*eX*jY)) - ((bY*eX*kZ)+(aX*gZ*jY)+(cZ*fY*iX))</p>
+                    <p id="D1"></p>
+                    <p id="D2"></p>
+                    <p id="D3"></p>
+                    <p id="D"></p>
                 </li>
             </div>
     
@@ -146,54 +149,57 @@
                     (N), faremos o mesmo calcula do passo anterior, ficará assim:
         
                     <div class="tabelaMatriz">
-                        <table>
+                        <table><!--Matriz de DX-->
                             <thead>
                                 <th>x</th>
                                 <th>y</th>
                                 <th>z</th>
                             </thead>
                             <tbody>
-                                <tr><!--linha 1-->
-                                    <td class="_0_0">dN</td><!--coluna de N-->
-                                    <td class="_0_1">bY</td><!--coluna de y-->
-                                    <td class="_0_2">cZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="aN">dN</td>
+                                    <td class="aY">bY</td>
+                                    <td class="aZ">cZ</td>
         
                                 </tr>
-                                <tr><!--linha 2-->
-                                    <td class="_1_0">hN</td><!--coluna de N-->
-                                    <td class="_1_1">fY</td><!--coluna de y-->
-                                    <td class="_1_2">gZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="bN">hN</td>
+                                    <td class="bY">fY</td>
+                                    <td class="bZ">gZ</td>
                                 </tr>
-                                <tr><!--linha 3-->
-                                    <td class="_2_0">lN</td><!--coluna de N-->
-                                    <td class="_2_1">jY</td><!--coluna de y-->
-                                    <td class="_2_2">kZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="cN">lN</td>
+                                    <td class="cY">jY</td>
+                                    <td class="cZ">kZ</td>
                                 </tr>
                             </tbody>
                         </table>
                         <table>
                             <thead>
-                                <th>x</th>
+                                <th>N</th>
                                 <th>y</th>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="_0_3">dN</td><!--coluna de N-->
-                                    <td class="_0_4">bY</td><!--coluna de y-->
+                                    <td class="aN">dN</td>
+                                    <td class="aY">bY</td>
                                 </tr>
                                 <tr>
-                                    <td class="_1_3">hN</td><!--coluna de N-->
-                                    <td class="_1_4">fY</td><!--coluna de y-->
+                                    <td class="bN">hN</td>
+                                    <td class="bY">fY</td>
                                 </tr>
                                 <tr>
-                                    <td class="_2_3">lN</td><!--coluna de N-->
-                                    <td class="_2_4">jY</td><!--coluna de y-->
+                                    <td class="cN">lN</td>
+                                    <td class="cY">jY</td>
                                 </tr>
                             </tbody>
         
                         </table>
                     </div>
-                    <p>Dx= ((dN*fY*kZ)+(bY*gZ*lN)+(cZ*hN*jY)) - ((bY*hN*kZ)+(dN*gZ*jY)+(cZ*fY*lN))</p>
+                    <p id="DX1"></p>
+                    <p id="DX2"></p>
+                    <p id="DX3"></p>
+                    <p id="DX"></p>
         
                 </li>
             </div>
@@ -203,28 +209,28 @@
                     substituir as de Y e encontraremos o determinante da matriz de Y (Dy):
                     <div class="tabelaMatriz">
                         <table class="matriz_D">
-                            <thead>
+                            <thead><!--Matriz da DY-->
                                 <th>x</th>
                                 <th>N</th>
                                 <th>z</th>
         
                             </thead>
                             <tbody>
-                                <tr><!--linha 1-->
-                                    <td class="_0_0">aX</td><!--coluna de x-->
-                                    <td class="_0_1">dN</td><!--coluna de N-->
-                                    <td class="_0_2">cZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="aX">aX</td>
+                                    <td class="aN">dN</td>
+                                    <td class="aZ">cZ</td>
         
                                 </tr>
-                                <tr><!--linha 2-->
-                                    <td class="_1_0">eX</td><!--coluna de x-->
-                                    <td class="_1_1">hN</td><!--coluna de N-->
-                                    <td class="_1_2">gZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="bX">eX</td>
+                                    <td class="bN">hN</td>
+                                    <td class="bZ">gZ</td>
                                 </tr>
-                                <tr><!--linha 3-->
-                                    <td class="_2_0">iX</td><!--coluna de x-->
-                                    <td class="_2_1">lN</td><!--coluna de N-->
-                                    <td class="_2_2">kZ</td><!--coluna de z-->
+                                <tr>
+                                    <td class="cX">iX</td>
+                                    <td class="cN">lN</td>
+                                    <td class="cZ">kZ</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -235,21 +241,24 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="_0_3">aX</td><!--coluna de x-->
-                                    <td class="_0_4">dN</td><!--coluna de N-->
+                                    <td class="aX">aX</td>
+                                    <td class="aN">dN</td>
                                 </tr>
                                 <tr>
-                                    <td class="_1_3">eX</td><!--coluna de x-->
-                                    <td class="_1_4">hN</td><!--coluna de N-->
+                                    <td class="bX">eX</td>
+                                    <td class="bN">hN</td>
                                 </tr>
                                 <tr>
-                                    <td class="_2_3">iX</td><!--coluna de x-->
-                                    <td class="_2_4">lN</td><!--coluna de N-->
+                                    <td class="cX">iX</td>
+                                    <td class="cN">lN</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <p>Dy= ((aX*hN*kZ)+(dN*gZ*iX)+(cZ*eX*lN)) - ((dN*eX*kZ)+(aX*gZ*lN)+(cZ*hN*iX))</p>
+                    <p id="DY1"></p>
+                    <p id="DY2"></p>
+                    <p id="DY3"></p>
+                    <p id="DY"></p>
                 </li>
             </div>
     
@@ -260,7 +269,7 @@
                     encontrar o determinante de Z (Dz):
         
                     <div class="tabelaMatriz">
-                        <table>
+                        <table><!--Matriz da DZ-->
                             <thead>
                                 <th>x</th>
                                 <th>y</th>
@@ -268,21 +277,21 @@
         
                             </thead>
                             <tbody>
-                                <tr><!--linha 1-->
-                                    <td class="_0_0">aX</td><!--coluna de x-->
-                                    <td class="_0_1">bY</td><!--coluna de y-->
-                                    <td class="_0_2">dN</td><!--coluna de N-->
+                                <tr>
+                                    <td class="aX">aX</td>
+                                    <td class="aY">bY</td>
+                                    <td class="aN">dN</td>
         
                                 </tr>
-                                <tr><!--linha 2-->
-                                    <td class="_1_0">eX</td><!--coluna de x-->
-                                    <td class="_1_1">fY</td><!--coluna de y-->
-                                    <td class="_1_2">hN</td><!--coluna de N-->
+                                <tr>
+                                    <td class="bX">eX</td>
+                                    <td class="bY">fY</td>
+                                    <td class="bN">hN</td>
                                 </tr>
-                                <tr><!--linha 3-->
-                                    <td class="_2_0">iX</td><!--coluna de x-->
-                                    <td class="_2_1">jY</td><!--coluna de y-->
-                                    <td class="_2_2">lN</td><!--coluna de N-->
+                                <tr>
+                                    <td class="cX">iX</td>
+                                    <td class="cY">jY</td>
+                                    <td class="cN">lN</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -293,22 +302,25 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="_0_3">aX</td><!--coluna de x-->
-                                    <td class="_0_4">bY</td><!--coluna de y-->
+                                    <td class="aX">aX</td>
+                                    <td class="aY">bY</td>
                                 </tr>
                                 <tr>
-                                    <td class="_1_3">eX</td><!--coluna de x-->
-                                    <td class="_1_4">fY</td><!--coluna de y-->
+                                    <td class="bX">eX</td>
+                                    <td class="bY">fY</td>
                                 </tr>
                                 <tr>
-                                    <td class="_2_3">iX</td><!--coluna de x-->
-                                    <td class="_2_4">jY</td><!--coluna de y-->
+                                    <td class="cX">iX</td>
+                                    <td class="cY">jY</td>
                                 </tr>
                             </tbody>
         
                         </table>
                     </div>
-                    <p>Dz= ((aX*fY*lN)+(bY*hN*iX)+(dN*eX*jY)) - ((bY*eX*lN)+(aX*hN*jY)+(dN*fY*iX))</p>
+                    <p id="DZ1"></p>
+                    <p id="DZ2"></p>
+                    <p id="DZ3"></p>
+                    <p id="DZ"></p>
                 </li>
             </div>
     
