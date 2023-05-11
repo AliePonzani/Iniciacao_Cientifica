@@ -1,9 +1,9 @@
 var valores = [];
 
 const Calcular = () => {
-    if(sessionStorage.meusValores){
+
+    if (sessionStorage.meusValores) {
         valores = JSON.parse(sessionStorage.getItem('meusValores'));
-        alert("não há valor a ser retornado");
     }
 
     var aX = document.getElementById('aX').value;
@@ -19,7 +19,18 @@ const Calcular = () => {
     var cZ = document.getElementById('kZ').value;
     var cN = document.getElementById('lN').value;
 
-    valores = {aX: aX, bX: bX, cX: cX, aY: aY, bY: bY, cY: cY, aZ: aZ, bZ: bZ, cZ: cZ, aN: aN, bN: bN, cN: cN};
+    valores = { aX: aX, bX: bX, cX: cX, aY: aY, bY: bY, cY: cY, aZ: aZ, bZ: bZ, cZ: cZ, aN: aN, bN: bN, cN: cN };
+
+    for (var i in valores) {
+        if (!valores[i]) {
+            alert("Todos os campos devem ser preenchidos!");
+            break;
+        }
+        else {
+            const cliqueAqui = document.querySelector('#cliqueAqui');
+            cliqueAqui.href = "../Segunda_Tela/segundaTela.html";
+        }
+    }
 
     sessionStorage.meusValores = JSON.stringify(valores);
 
@@ -35,7 +46,7 @@ const Calcular = () => {
     // exibirResultado.innerHTML = `x = ${x1.toFixed()} <br> y = ${x2.toFixed()} <br> z = ${x3.toFixed()} <br>`
     // exibirResultado.style.visibility = "visible";
 
-    
+
 }
 
 

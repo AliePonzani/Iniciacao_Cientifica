@@ -8,7 +8,7 @@ html {
     justify-content: space-around;
 }
 
-._0_0{
+._0_0 {
     background-color: aqua;
 }
 
@@ -69,6 +69,16 @@ table {
     border-right: 1px solid rgb(100, 98, 98);
 }
 
+table thead th:nth-child(3) {
+    border-right: 1px solid black;
+  }
+  
+
+table tr td:nth-child(3) {
+    border-right: 1px solid black;
+}
+  
+
 th {
     border-bottom: 1px solid rgb(100, 98, 98);
 }
@@ -87,10 +97,11 @@ th {
 }
 
 @keyframes destaque {
-    from{
+    from {
         background-color: white;
     }
-    to{
+
+    to {
         background-color: purple;
         color: white;
     }

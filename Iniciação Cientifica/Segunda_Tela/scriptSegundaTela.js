@@ -1,68 +1,41 @@
-class Celula {
-    constructor(classe) {
-        this.classe = classe;
-    }
-
-    async animacao() {
-        return new Promise((resolve) => {
-            const elementos = document.getElementsByClassName(this.classe);
-            for (let i = 0; i < elementos.length; i++) {
-                elementos[i].style.animation = '';
-            }
-
-            setTimeout(() => {
-                for (let i = 0; i < elementos.length; i++) {
-                    elementos[i].style.animationName = 'destaque';
-                    elementos[i].style.animationDuration = '1s';
-                    elementos[i].style.animationIterationCount = '1';
-                    elementos[i].addEventListener('animationend', () => {
-                        resolve();
-                    });
-                }
-            }, 0);
-        });
-    }
-}
-var teste = 1;
-
-function Calculo_D(){
+function Calculo_D() {
     var valor = JSON.parse(sessionStorage.getItem('meusValores'));
     let D1 = document.getElementById('D1');
     let D2 = document.getElementById('D2');
     let D3 = document.getElementById('D3');
     let D = document.getElementById('D');
 
-    D1.innerHTML = `D= ((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY})) - ((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX}))`; 
-    D2.innerHTML = `D= (${valor.aX*valor.bY*valor.cZ} + ${valor.aY*valor.bZ*valor.cX} + ${valor.aZ*valor.bX*valor.cY}) - (${valor.aY*valor.bX*valor.cZ} + ${valor.aX*valor.bZ*valor.cY} + ${valor.aZ*valor.bY*valor.cX})`;
-    D3.innerHTML = `D= ${(valor.aX*valor.bY*valor.cZ)+(valor.aY*valor.bZ*valor.cX)+(valor.aZ*valor.bX*valor.cY)} - ${(valor.aY*valor.bX*valor.cZ) + (valor.aX*valor.bZ*valor.cY) + (valor.aZ*valor.bY*valor.cX)}`;
-    D.innerHTML = `D= ${((valor.aX*valor.bY*valor.cZ)+(valor.aY*valor.bZ*valor.cX)+(valor.aZ*valor.bX*valor.cY)) - ((valor.aY*valor.bX*valor.cZ) + (valor.aX*valor.bZ*valor.cY) + (valor.aZ*valor.bY*valor.cX))}`;
+    D1.innerHTML = `D= ((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY})) - ((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX}))`;
+    D2.innerHTML = `D= (${valor.aX * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cY}) - (${valor.aY * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cX})`;
+    D3.innerHTML = `D= ${(valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)} - ${(valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX)}`;
+    D.innerHTML = `D= ${((valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX))}`;
 }
 
-function Calculo_DX(){
+function Calculo_DX() {
     var valor = JSON.parse(sessionStorage.getItem('meusValores'));
     let DX1 = document.getElementById('DX1');
     let DX2 = document.getElementById('DX2');
     let DX3 = document.getElementById('DX3');
     let DX = document.getElementById('DX');
     DX1.innerHTML = `Dx= ((${valor.aN} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cY})) - ((${valor.aY} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cN}))`;
-    DX2.innerHTML = `Dx= (${valor.aN*valor.bY*valor.cZ} + ${valor.aY*valor.bZ*valor.cN} + ${valor.aZ*valor.bN*valor.cY}) - (${valor.aY*valor.bN*valor.cZ} + ${valor.aN*valor.bZ*valor.cY} + ${valor.aZ*valor.bY*valor.cN})`;
-    DX3.innerHTML = `Dx= ${(valor.aN*valor.bY*valor.cZ)+(valor.aY*valor.bZ*valor.cN)+(valor.aZ*valor.bN*valor.cY)} - ${(valor.aY*valor.bN*valor.cZ) + (valor.aN*valor.bZ*valor.cY) + (valor.aZ*valor.bY*valor.cN)}`;
-    DX.innerHTML = `Dx= ${((valor.aN*valor.bY*valor.cZ)+(valor.aY*valor.bZ*valor.cN)+(valor.aZ*valor.bN*valor.cY)) - ((valor.aY*valor.bN*valor.cZ) + (valor.aN*valor.bZ*valor.cY) + (valor.aZ*valor.bY*valor.cN))}`;
+    DX2.innerHTML = `Dx= (${valor.aN * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cY}) - (${valor.aY * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cN})`;
+    DX3.innerHTML = `Dx= ${(valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)} - ${(valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN)}`;
+    DX.innerHTML = `Dx= ${((valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)) - ((valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN))}`;
 }
 
-function Calculo_DY(){
+function Calculo_DY() {
     var valor = JSON.parse(sessionStorage.getItem('meusValores'));
     let DY1 = document.getElementById('DY1');
     let DY2 = document.getElementById('DY2');
     let DY3 = document.getElementById('DY3');
     let DY = document.getElementById('DY');
     DY1.innerHTML = `Dy= ((${valor.aX} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cN})) - ((${valor.aN} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cX}))`;
-    DY2.innerHTML = `Dy=  (${valor.aX*valor.bN*valor.cZ} + ${valor.aN*valor.bZ*valor.cX} + ${valor.aZ*valor.bX*valor.cN}) - (${valor.aN*valor.bX*valor.cZ} + ${valor.aX*valor.bZ*valor.cN} + ${valor.aZ*valor.bN*valor.cX})`;
-    DY3.innerHTML = `Dy=  ${(valor.aX*valor.bN*valor.cZ)+(valor.aN*valor.bZ*valor.cX)+(valor.aZ*valor.bX*valor.cN)} - ${(valor.aN*valor.bX*valor.cZ) + (valor.aX*valor.bZ*valor.cN) + (valor.aZ*valor.bN*valor.cX)}`;
-    DY.innerHTML = `Dy=  ${((valor.aX*valor.bN*valor.cZ)+(valor.aN*valor.bZ*valor.cX)+(valor.aZ*valor.bX*valor.cN)) - ((valor.aN*valor.bX*valor.cZ) + (valor.aX*valor.bZ*valor.cN) + (valor.aZ*valor.bN*valor.cX))}`;
+    DY2.innerHTML = `Dy=  (${valor.aX * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cN}) - (${valor.aN * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cX})`;
+    DY3.innerHTML = `Dy=  ${(valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)} - ${(valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX)}`;
+    DY.innerHTML = `Dy=  ${((valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)) - ((valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX))}`;
 }
 
-function Calculo_DZ(){
+function Calculo_DZ() {
     var valor = JSON.parse(sessionStorage.getItem('meusValores'));
     let DZ1 = document.getElementById('DZ1');
     let DZ2 = document.getElementById('DZ2');
@@ -70,9 +43,9 @@ function Calculo_DZ(){
     let DZ = document.getElementById('DZ');
 
     DZ1.innerHTML = `Dz= ((${valor.aX} * ${valor.bY} * ${valor.cN}) + (${valor.aY} * ${valor.bN} * ${valor.cX}) + (${valor.aN} * ${valor.bX} * ${valor.cY})) - ((${valor.aY} * ${valor.bX} * ${valor.cN}) + (${valor.aX} * ${valor.bN}* ${valor.cY}) + (${valor.aN} * ${valor.bY} * ${valor.cX}))`;
-    DZ2.innerHTML = `Dz= (${valor.aX*valor.bY*valor.cN} + ${valor.aY*valor.bN*valor.cX} + ${valor.aN*valor.bX*valor.cY}) - (${valor.aY*valor.bX*valor.cN} + ${valor.aX*valor.bN*valor.cY} + ${valor.aN*valor.bY*valor.cX})`;
-    DZ3.innerHTML = `Dz= ${(valor.aX*valor.bY*valor.cN)+(valor.aY*valor.bN*valor.cX)+(valor.aN*valor.bX*valor.cY)} - ${(valor.aY*valor.bX*valor.cN) + (valor.aX*valor.bN*valor.cY) + (valor.aN*valor.bY*valor.cX)}`;
-    DZ.innerHTML = `Dz= ${((valor.aX*valor.bY*valor.cN)+(valor.aY*valor.bN*valor.cX)+(valor.aN*valor.bX*valor.cY)) - ((valor.aY*valor.bX*valor.cN) + (valor.aX*valor.bN*valor.cY) + (valor.aN*valor.bY*valor.cX))}`;
+    DZ2.innerHTML = `Dz= (${valor.aX * valor.bY * valor.cN} + ${valor.aY * valor.bN * valor.cX} + ${valor.aN * valor.bX * valor.cY}) - (${valor.aY * valor.bX * valor.cN} + ${valor.aX * valor.bN * valor.cY} + ${valor.aN * valor.bY * valor.cX})`;
+    DZ3.innerHTML = `Dz= ${(valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)} - ${(valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX)}`;
+    DZ.innerHTML = `Dz= ${((valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX))}`;
 }
 
 function Chamar() {
@@ -81,9 +54,17 @@ function Chamar() {
 
     var valor = JSON.parse(sessionStorage.getItem('meusValores'));
 
+    for(var j in valor){
+        if(!valor[j]){
+            alert("Todos os campos da tela anterior devem ser preenchidos!");
+            history.back();
+            break;
+        }
+    }
+
     resultado.innerHTML = `${valor.aX}x + ${valor.aY}y + ${valor.aZ}z = ${valor.aN}<br>${valor.bX}x + ${valor.bY}y + ${valor.bZ}z = ${valor.bN}<br>${valor.cX}x + ${valor.cY}y + ${valor.cZ}z = ${valor.cN}`;
-    
-    
+
+
     let aX = document.getElementsByClassName('aX');
     let bX = document.getElementsByClassName('bX');
     let cX = document.getElementsByClassName('cX');
@@ -119,47 +100,91 @@ function Chamar() {
 
 }
 
+function animacao(...elementos) {
+    return new Promise((resolve) => {
+        
+        for (let i = 0; i < elementos.length; i++) {
+            elementos[i].style.animation = '';
+        }
+
+        setTimeout(() => {
+            for (let i = 0; i < elementos.length; i++) {
+                elementos[i].style.animation = 'destaque 1s 1';
+                elementos[i].addEventListener('animationend', () => {
+                    resolve();
+                });
+            }
+        }, 0);
+    });
+}
+
+
 
 window.onload = function () {
-
     Chamar();
     Calculo_D();
     Calculo_DX();
     Calculo_DY();
     Calculo_DZ();
 
-    alert("função funcionando");
+    var teste = document.querySelectorAll('td');
 
     (async function () {
+        let CITP2 = 12; //Célula Inicial Tabela Passo 2
+        let CITP3 = 27; //Célula Inicial Tabela Passo 3
+        let CITP4 = 42; //Célula Inicial Tabela Passo 4
+        let CITP5 = 57; //Célula Inicial Tabela Passo 5
+
         while (true) {
-            const celulas = [];
-
-            const numRows = 3;
-            const numCols = 5;
-
-            for (let i = 0; i < numRows; i++) {
-                for (let j = 0; j < numCols; j++) {
-                    const classe = `_${i}_${j}`;
-                    const celula = new Celula(classe);
-                    celulas.push(celula);
+            for (let i = 0; i < 6; i++) {
+                if (i < 2) {
+                    for (let j = 0; j < 3; j++) {
+                        await animacao(teste[CITP2], teste[CITP3], teste[CITP4], teste[CITP5]);
+                        CITP2 = CITP2 + 6;
+                        CITP3 = CITP3 + 6;
+                        CITP4 = CITP4 + 6;
+                        CITP5 = CITP5 + 6;
+                    }
+                    CITP2 = CITP2 - 17;
+                    CITP3 = CITP3 - 17;
+                    CITP4 = CITP4 - 17;
+                    CITP5 = CITP5 - 17;
+                }
+                else if (i == 2) {
+                    for (let k = 0; k < 3; k++) {
+                        await animacao(teste[CITP2], teste[CITP3], teste[CITP4], teste[CITP5]);
+                        CITP2 = CITP2 + 6;
+                        CITP3 = CITP3 + 6;
+                        CITP4 = CITP4 + 6;
+                        CITP5 = CITP5 + 6;
+                    }
+                    CITP2 = 16;
+                    CITP3 = 31;
+                    CITP4 = 46;
+                    CITP5 = 61;
+                }
+                else {
+                    for (let l = 0; l < 3; l++) {
+                        try {
+                            await animacao(teste[CITP2], teste[CITP3], teste[CITP4], teste[CITP5]);
+                            CITP2 = CITP2 + 4;
+                            CITP3 = CITP3 + 4;
+                            CITP4 = CITP4 + 4;
+                            CITP5 = CITP5 + 4;
+                        } catch (error) {
+                            console.error(error);
+                        }
+                    }
+                    CITP2 = CITP2 - 13;
+                    CITP3 = CITP3 - 13;
+                    CITP4 = CITP4 - 13;
+                    CITP5 = CITP5 - 13;
                 }
             }
-
-            for (let k = 0; k < numCols - 2; k++) {
-                for (let i = 0, j = k; i < numRows && j < numCols; i++, j++) {
-                    const celula = celulas[i * numCols + j];
-                    await celula.animacao();
-                }
-            }
-
-            for (let k = numCols - 1; k >= 2; k--) {
-                for (let i = 0, j = k; i < numRows && j >= 0; i++, j--) {
-                    const celula = celulas[i * numCols + j];
-                    await celula.animacao();
-                }
-            }
+            CITP2 = 12;
+            CITP3 = 27;
+            CITP4 = 42;
+            CITP5 = 57;
         }
     })();
-
-    
 }
