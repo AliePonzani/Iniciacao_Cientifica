@@ -9,6 +9,12 @@ html {
 
 }
 
+body{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 #titulo {
   background-color: white;
   margin: 0;
@@ -95,7 +101,31 @@ table input {
   height: 30px;
   margin-top: -3px;
   font-size: 20px;
+  
 }
+
+button{
+  background-color: white;
+  border: solid purple;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.alert button{
+  border: solid white;
+  color: purple;
+  width: 55px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: purple;
+  color: white;
+  border-style: double;
+}
+
+
 
 #cliqueAqui {
   background: none;
@@ -109,4 +139,20 @@ table input {
 
 li {
   margin-left: 40px;
+}
+
+
+
+
+.alert{
+  visibility: hidden;
+  padding: 20px;
+  
+  position: fixed;
+  top: 25%;
+  text-align: center;
+  background-color: purple;
+  color: white;
+  font-size: 30px;
+  border-radius: 12px;
 }
