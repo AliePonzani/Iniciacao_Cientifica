@@ -5,270 +5,281 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta class="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styleSegundaTela.css" rel="stylesheet" id="  " type="text/css" />
-    <script src="scriptSegundaTela.js"></script>
+    <link href="style_SegudnaTela.css" rel="stylesheet" id="  " type="text/css" />
+    <script src="script_SegundaTela.js"></script>
     <title>Passo a Passo</title>
 </head>
 
 <body>
     <!-- <input class="_0_0" type="hidden"></input> -->
     <div class="container">
-        <div id="teste"></div>
         <div class="texto">
             <h1>Legal!<br>
                 Se esta aqui então realmente quer entender o que rola por trás para resolver este sistema
-                de equação e vamos fazer o possivel para te mostrar cada etapa para que você entenda. Vamos la?!</h1>
-
+                de equação e vamos fazer o possivel para te mostrar cada etapa para que você entenda. Vamos la?!
+            </h1>
             <p>Para resolver o sistema de equações lineares 3x3, que você colocou na tela anterior,
-                usando a Regra de Cramer, seguimos estes passos:</p>
+                usando a Regra de Cramer, seguimos estes passos:
+            </p>
         </div>
-        <ol>
-            <div class="passos"><!--Matriz da equação-->
-                <li>Escrevemos o sistema de equações na forma matricial:
-                    <div class="alinhar">
-                    <div id="equacao">
 
-                    </div>
-                    <div class="tabelaMatriz">
-                        
-                        <span>FICARÁ =></span>
+        <div class="passos"><!--Matriz da equação-->
+            <p>1. Escrevemos o sistema de equações na forma matricial:
+            <div class="alinhar">
+                <div id="equacao">
 
-                        <table class="matriz">
-                            <thead>
-                                <th>x</th>
-                                <th>y</th>
-                                <th>z</th>
-                                <th>N</th>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td class="aX"></td>
-                                    <td class="aY"></td>
-                                    <td class="aZ"></td>
-                                    <td class="aN"></td>
-                                </tr>
-                                <tr><!--coluna de y-->
-                                    <td class="bX"></td>
-                                    <td class="bY"></td>
-                                    <td class="bZ"></td>
-                                    <td class="bN"></td>
-                                </tr>
-                                <tr><!--coluna de z-->
-                                    <td class="cX"></td>
-                                    <td class="cY"></td>
-                                    <td class="cZ"></td>
-                                    <td class="cN"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-                </li>
+                <div class="tabelaMatriz">
+
+                    <span>FICARÁ =></span>
+
+                    <table class="matriz">
+                        <thead>
+                            <th>x</th>
+                            <th>y</th>
+                            <th>z</th>
+                            <th>N</th>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="aX"></td>
+                                <td class="aY"></td>
+                                <td class="aZ"></td>
+                                <td class="aN"></td>
+                            </tr>
+                            <tr><!--coluna de y-->
+                                <td class="bX"></td>
+                                <td class="bY"></td>
+                                <td class="bZ"></td>
+                                <td class="bN"></td>
+                            </tr>
+                            <tr><!--coluna de z-->
+                                <td class="cX"></td>
+                                <td class="cY"></td>
+                                <td class="cZ"></td>
+                                <td class="cN"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+            </p>
+        </div>
 
 
-            <div class="passos"><!--Matriz do Determinante-->
-                <li>Agora vamos calcular o determinante da matriz, para isso colocaremos os coeficientes das
-                    incógnitas X e Y no lugar de N, depois multiplicamos os valores das transversais e depois somamos os
-                    valores
-                    de cada trasversal da esquerda pra direita e depois da dreita para a esquerda, tendo esses valores,
-                    subtraimos um pelo outro , ficará assim:
-                    <div class="tabelaMatriz">
-                        <table>
-                            <thead>
-                                <th>x</th>
-                                <th>y</th>
-                                <th>z</th>
-                                <th>x</th>
-                                <th>y</th>
-
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="aX"></td>
-                                    <td class="aY"></td>
-                                    <td class="aZ"></td>
-                                    <td class="aX"></td>
-                                    <td class="aY"></td>
-                                </tr>
-                                <tr>
-                                    <td class="bX"></td>
-                                    <td class="bY"></td>
-                                    <td class="bZ"></td>
-                                    <td class="bX"></td>
-                                    <td class="bY"></td>
-                                </tr>
-                                <tr>
-                                    <td class="cX"></td>
-                                    <td class="cY"></td>
-                                    <td class="cZ"></td>
-                                    <td class="cX"></td>
-                                    <td class="cY"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p id="D1"></p>
-                    <p id="D2"></p>
-                    <p id="D3"></p>
-                    <p id="D"></p>
-                </li>
+        <div class="passos"><!--Matriz do Determinante-->
+            <div class="textoPassos">2. Agora vamos calcular o determinante da matriz, para isso colocaremos os
+                coeficientes das
+                incógnitas X e Y no lugar de N, depois multiplicamos os valores das transversais e depois somamos os
+                valores de cada trasversal da esquerda pra direita (ROXO) e depois da dreita para a esquerda (AZUL),
+                tendo esses valores,
+                subtraimos um pelo outro , ficará assim:
             </div>
-
-
-            <div class="passos"><!--Matriz de Dx-->
-                <li>Agora que temos o valor do determinante da matriz (D), calcularemos o determinante da
-                    matriz
-                    de X (Dx) resultante ao substituir as colunas dos coeficientes de X pela coluna dos termos
-                    independentes
-                    (N), faremos o mesmo calcula do passo anterior, ficará assim:
-
-                    <div class="tabelaMatriz">
-                        <table>
-                            <thead>
-                                <th>x</th>
-                                <th>y</th>
-                                <th>z</th>
-                                <th>N</th>
-                                <th>y</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="aN"></td>
-                                    <td class="aY"></td>
-                                    <td class="aZ"></td>
-                                    <td class="aN"></td>
-                                    <td class="aY"></td>
-                                </tr>
-                                <tr>
-                                    <td class="bN"></td>
-                                    <td class="bY"></td>
-                                    <td class="bZ"></td>
-                                    <td class="bN"></td>
-                                    <td class="bY"></td>
-                                </tr>
-                                <tr>
-                                    <td class="cN"></td>
-                                    <td class="cY"></td>
-                                    <td class="cZ"></td>
-                                    <td class="cN"></td>
-                                    <td class="cY"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p id="DX1"></p>
-                    <p id="DX2"></p>
-                    <p id="DX3"></p>
-                    <p id="DX"></p>
-                </li>
+            <div class="tabelaMatriz">
+                <table>
+                    <thead>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>z</th>
+                        <th>x</th>
+                        <th>y</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="aX"></td>
+                            <td class="aY"></td>
+                            <td class="aZ"></td>
+                            <td class="aX"></td>
+                            <td class="aY"></td>
+                        </tr>
+                        <tr>
+                            <td class="bX"></td>
+                            <td class="bY"></td>
+                            <td class="bZ"></td>
+                            <td class="bX"></td>
+                            <td class="bY"></td>
+                        </tr>
+                        <tr>
+                            <td class="cX"></td>
+                            <td class="cY"></td>
+                            <td class="cZ"></td>
+                            <td class="cX"></td>
+                            <td class="cY"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div class="passos"><!--Matriz da DY-->
-                <li>Agora repetimos o passo 3 mas dessa vez ao invés de substituir as colunas de X vamos
-                    substituir as de Y e encontraremos o determinante da matriz de Y (Dy):
-                    <div class="tabelaMatriz">
-                        <table class="matriz_D">
-                            <thead>
-                                <th>x</th>
-                                <th>N</th>
-                                <th>z</th>
-                                <th>x</th>
-                                <th>N</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="aX"></td>
-                                    <td class="aN"></td>
-                                    <td class="aZ"></td>
-                                    <td class="aX"></td>
-                                    <td class="aN"></td>
-                                </tr>
-                                <tr>
-                                    <td class="bX"></td>
-                                    <td class="bN"></td>
-                                    <td class="bZ"></td>
-                                    <td class="bX"></td>
-                                    <td class="bN"></td>
-                                </tr>
-                                <tr>
-                                    <td class="cX"></td>
-                                    <td class="cN"></td>
-                                    <td class="cZ"></td>
-                                    <td class="cX"></td>
-                                    <td class="cN"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p id="DY1"></p>
-                    <p id="DY2"></p>
-                    <p id="DY3"></p>
-                    <p id="DY"></p>
-                </li>
+            <div class="calculo">
+                <p id="D1"></p>
+                <p id="D2"></p>
+                <p id="D3"></p>
             </div>
+            <p id="D"></p>
+        </div>
 
 
-            <div class="passos"><!--Matriz da DZ-->
-                <li>Por fim iremos substituir a coluna de Z e realizar o mesmo processo dos passos 3 e 4
-                    para
-                    encontrar o determinante de Z (Dz):
-
-                    <div class="tabelaMatriz">
-                        <table>
-                            <thead>
-                                <th>x</th>
-                                <th>y</th>
-                                <th>z</th>
-                                <th>x</th>
-                                <th>y</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="aX"></td>
-                                    <td class="aY"></td>
-                                    <td class="aN"></td>
-                                    <td class="aX"></td>
-                                    <td class="aY"></td>
-
-                                </tr>
-                                <tr>
-                                    <td class="bX"></td>
-                                    <td class="bY"></td>
-                                    <td class="bN"></td>
-                                    <td class="bX"></td>
-                                    <td class="bY"></td>
-                                </tr>
-                                <tr>
-                                    <td class="cX"></td>
-                                    <td class="cY"></td>
-                                    <td class="cN"></td>
-                                    <td class="cX"></td>
-                                    <td class="cY"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p id="DZ1"></p>
-                    <p id="DZ2"></p>
-                    <p id="DZ3"></p>
-                    <p id="DZ"></p>
-                </li>
+        <div class="passos"><!--Matriz de Dx-->
+            <div class="textoPassos">3. Agora que temos o valor do determinante da matriz (D), calcularemos o
+                determinante da
+                matriz
+                de X (Dx) resultante ao substituir as colunas dos coeficientes de X pela coluna dos termos
+                independentes
+                (N), faremos o mesmo calcula do passo anterior, ficará assim:
             </div>
-
-            <div class="passos">
-                <li>Pronto, já temos todos os determinantes, agora para finalizar e descobrirmos os valores
-                    de
-                    X, Y e Z basta dividir os valores de Dx, Dy e Dz por D individualmente, veja:
-                    <p>
-                    <div id="valorDeX"></div>
-                    <div id="valorDeY"></div>
-                    <div id="valorDeZ"></div>
-                    </p>
-                </li>
+            <div class="tabelaMatriz">
+                <table>
+                    <thead>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>z</th>
+                        <th>N</th>
+                        <th>y</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="aN"></td>
+                            <td class="aY"></td>
+                            <td class="aZ"></td>
+                            <td class="aN"></td>
+                            <td class="aY"></td>
+                        </tr>
+                        <tr>
+                            <td class="bN"></td>
+                            <td class="bY"></td>
+                            <td class="bZ"></td>
+                            <td class="bN"></td>
+                            <td class="bY"></td>
+                        </tr>
+                        <tr>
+                            <td class="cN"></td>
+                            <td class="cY"></td>
+                            <td class="cZ"></td>
+                            <td class="cN"></td>
+                            <td class="cY"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </ol>
+            <div class="calculo">
+                <p id="DX1"></p>
+                <p id="DX2"></p>
+                <p id="DX3"></p>
+            </div>
+            <p id="DX"></p>
+
+        </div>
+
+        <div class="passos"><!--Matriz da DY-->
+            <div class="textoPassos">4. Agora repetimos o passo 3 mas dessa vez ao invés de substituir as colunas de
+                X vamos
+                substituir as de Y e encontraremos o determinante da matriz de Y (Dy):
+            </div>
+            <div class="tabelaMatriz">
+                <table class="matriz_D">
+                    <thead>
+                        <th>x</th>
+                        <th>N</th>
+                        <th>z</th>
+                        <th>x</th>
+                        <th>N</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="aX"></td>
+                            <td class="aN"></td>
+                            <td class="aZ"></td>
+                            <td class="aX"></td>
+                            <td class="aN"></td>
+                        </tr>
+                        <tr>
+                            <td class="bX"></td>
+                            <td class="bN"></td>
+                            <td class="bZ"></td>
+                            <td class="bX"></td>
+                            <td class="bN"></td>
+                        </tr>
+                        <tr>
+                            <td class="cX"></td>
+                            <td class="cN"></td>
+                            <td class="cZ"></td>
+                            <td class="cX"></td>
+                            <td class="cN"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="calculo">
+                <p id="DY1"></p>
+                <p id="DY2"></p>
+                <p id="DY3"></p>
+            </div>
+            <p id="DY"></p>
+
+        </div>
+
+
+        <div class="passos"><!--Matriz da DZ-->
+            <div class="textoPassos">5. Por fim iremos substituir a coluna de Z e realizar o mesmo processo dos
+                passos 3 e 4
+                para
+                encontrar o determinante de Z (Dz):
+            </div>
+            <div class="tabelaMatriz">
+                <table>
+                    <thead>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>z</th>
+                        <th>x</th>
+                        <th>y</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="aX"></td>
+                            <td class="aY"></td>
+                            <td class="aN"></td>
+                            <td class="aX"></td>
+                            <td class="aY"></td>
+
+                        </tr>
+                        <tr>
+                            <td class="bX"></td>
+                            <td class="bY"></td>
+                            <td class="bN"></td>
+                            <td class="bX"></td>
+                            <td class="bY"></td>
+                        </tr>
+                        <tr>
+                            <td class="cX"></td>
+                            <td class="cY"></td>
+                            <td class="cN"></td>
+                            <td class="cX"></td>
+                            <td class="cY"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="calculo">
+                <p id="DZ1"></p>
+                <p id="DZ2"></p>
+                <p id="DZ3"></p>
+            </div>
+            <p id="DZ"></p>
+        </div>
+
+        <div class="passos">
+            <div class="textoPassos">6. Pronto, já temos todos os determinantes, agora para finalizar e descobrirmos
+                os valores
+                de X, Y e Z basta dividir os valores de Dx, Dy e Dz por D individualmente, veja:
+            </div>
+            <p>
+            <div id="valorDeX"></div>
+            <div id="valorDeY"></div>
+            <div id="valorDeZ"></div>
+            </p>
+        </div>
+
         <div class="texto">
             <p>Essa é a Regra de Cramer para sistemas de equações lineares 3x3. Lembre-se que essa regra só pode ser
                 aplicada se o determinante da matriz de coeficientes D for diferente de zero.</p>
@@ -277,12 +288,14 @@
                 Isso ocorre porque a Regra de Cramer envolve a divisão de determinantes, e se o determinante da matriz
                 de coeficientes for zero, a divisão por zero é indefinida e não é possível obter as soluções do sistema
                 dessa maneira. Nesse caso, é necessário utilizar outros métodos para resolver o sistema, como a
-                eliminação gaussiana ou a decomposição LU, por exemplo. Esses métodos são baseados em operações elementares de linha na matriz
-                de coeficientes e são capazes de resolver sistemas de equações lineares mesmo quando o determinante é zero.
+                eliminação gaussiana ou a decomposição LU, por exemplo. Esses métodos são baseados em operações
+                elementares de linha na matriz
+                de coeficientes e são capazes de resolver sistemas de equações lineares mesmo quando o determinante é
+                zero.
             </p>
         </div>
         <button class="texto">
-            <a href="../Tela_Inicial/telaInicial.html">Fazer novo calculo</a>
+            <a href="../Tela Inicial/TelaInicial.html">Fazer novo calculo</a>
         </button>
     </div>
 
