@@ -1,14 +1,14 @@
-var valor = JSON.parse(sessionStorage.getItem('meusValores'));
-var Determinante = ((valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX));
+var valor = JSON.parse(sessionStorage.getItem('meusValores'));//Tras os valores da tela inicial
+var Determinante = ((valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX));//Resultado do calculo do determinante
 
+
+//Passo a passo de como foi realizado o calculo do determinante
 function Calculo_D() {
-    
     let D1 = document.getElementById('D1');
     let D2 = document.getElementById('D2');
     let D3 = document.getElementById('D3');
     let D = document.getElementById('D');
     
-
     D1.innerHTML = `D= ((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY})) - ((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX}))`;
     D2.innerHTML = `D= (${valor.aX * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cY}) - (${valor.aY * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cX})`;
     D3.innerHTML = `D= ${(valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)} - ${(valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX)}`;
@@ -41,7 +41,7 @@ function Calculo_DY() {
     DY1.innerHTML = `Dy= ((${valor.aX} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cN})) - ((${valor.aN} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cX}))`;
     DY2.innerHTML = `Dy=  (${valor.aX * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cN}) - (${valor.aN * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cX})`;
     DY3.innerHTML = `Dy=  ${(valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)} - ${(valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX)}`;
-    DY.innerHTML = `Dy=  ${resultado/Determinante}`;
+    DY.innerHTML = `Dy=  ${resultado}`;
     valorDeY.innerHTML = `${resultado}/${Determinante} então y = ${resultado/Determinante}`;
 
 }
@@ -123,6 +123,24 @@ function animacao(...elementos) {
     });
 }
 
+function animacao2(...elementos) {
+    return new Promise((resolve) => {
+        
+        for (let i = 0; i < elementos.length; i++) {
+            elementos[i].style.animation = '';
+        }
+
+        setTimeout(() => {
+            for (let i = 0; i < elementos.length; i++) {
+                elementos[i].style.animation = 'destaque2 1s 1';
+                elementos[i].addEventListener('animationend', () => {
+                    resolve();
+                });
+            }
+        }, 0);
+    });
+}
+
 
 
 window.onload = function () {
@@ -132,7 +150,7 @@ window.onload = function () {
     Calculo_DY();
     Calculo_DZ();
 
-    var teste = document.querySelectorAll('td');
+    var celula = document.querySelectorAll('td');
 
     (async function () {
         let CITP2 = 12; //Célula Inicial Tabela Passo 2
@@ -144,24 +162,24 @@ window.onload = function () {
             for (let i = 0; i < 6; i++) {
                 if (i < 2) {
                     for (let j = 0; j < 3; j++) {
-                        await animacao(teste[CITP2], teste[CITP3], teste[CITP4], teste[CITP5]);
-                        CITP2 = CITP2 + 6;
-                        CITP3 = CITP3 + 6;
-                        CITP4 = CITP4 + 6;
-                        CITP5 = CITP5 + 6;
+                        await animacao(celula[CITP2], celula[CITP3], celula[CITP4], celula[CITP5]);
+                        CITP2 += 6;
+                        CITP3 += 6;
+                        CITP4 += 6;
+                        CITP5 += 6;
                     }
-                    CITP2 = CITP2 - 17;
-                    CITP3 = CITP3 - 17;
-                    CITP4 = CITP4 - 17;
-                    CITP5 = CITP5 - 17;
+                    CITP2 -= 17;
+                    CITP3 -= 17;
+                    CITP4 -= 17;
+                    CITP5 -= 17;
                 }
                 else if (i == 2) {
                     for (let k = 0; k < 3; k++) {
-                        await animacao(teste[CITP2], teste[CITP3], teste[CITP4], teste[CITP5]);
-                        CITP2 = CITP2 + 6;
-                        CITP3 = CITP3 + 6;
-                        CITP4 = CITP4 + 6;
-                        CITP5 = CITP5 + 6;
+                        await animacao(celula[CITP2], celula[CITP3], celula[CITP4], celula[CITP5]);
+                        CITP2 += 6;
+                        CITP3 += 6;
+                        CITP4 += 6;
+                        CITP5 += 6;
                     }
                     CITP2 = 16;
                     CITP3 = 31;
@@ -171,19 +189,19 @@ window.onload = function () {
                 else {
                     for (let l = 0; l < 3; l++) {
                         try {
-                            await animacao(teste[CITP2], teste[CITP3], teste[CITP4], teste[CITP5]);
-                            CITP2 = CITP2 + 4;
-                            CITP3 = CITP3 + 4;
-                            CITP4 = CITP4 + 4;
-                            CITP5 = CITP5 + 4;
+                            await animacao2(celula[CITP2], celula[CITP3], celula[CITP4], celula[CITP5]);
+                            CITP2 += 4;
+                            CITP3 += 4;
+                            CITP4 += 4;
+                            CITP5 += 4;
                         } catch (error) {
                             console.error(error);
                         }
                     }
-                    CITP2 = CITP2 - 13;
-                    CITP3 = CITP3 - 13;
-                    CITP4 = CITP4 - 13;
-                    CITP5 = CITP5 - 13;
+                    CITP2 -= 13;
+                    CITP3 -= 13;
+                    CITP4 -= 13;
+                    CITP5 -= 13;
                 }
             }
             CITP2 = 12;
