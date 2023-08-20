@@ -1,7 +1,7 @@
 var valor = JSON.parse(sessionStorage.getItem('meusValores'));//Tras os valores da tela inicial
 var Determinante = ((valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX));//Resultado do calculo do determinante
 
-
+//teste
 //Passo a passo de como foi realizado o calculo do determinante
 function Calculo_D() {
     let D1 = document.getElementById('D1');
