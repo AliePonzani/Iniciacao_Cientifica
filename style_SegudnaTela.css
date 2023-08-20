@@ -13,18 +13,18 @@ body {
 .container {
     padding: 20px;
     box-sizing: border-box;
-  
+
     /* Quando a tela for maior que 500px */
     @media screen and (min-width: 1200px) {
-      width: 60%;
+        width: 60%;
     }
-  
+
     /* Quando a tela for menor que 500px */
     @media screen and (max-width: 500px) {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
+}
+
 
 .texto,
 .passos {
@@ -39,7 +39,8 @@ body {
     text-align: center;
 }
 
-.textoPassos, .texto{
+.textoPassos,
+.texto {
     text-align: justify;
 }
 
@@ -59,8 +60,8 @@ body {
     font-weight: bold;
     white-space: nowrap;
     text-align: center;
-  }
-  
+}
+
 
 #equacao {
     width: 150px;
