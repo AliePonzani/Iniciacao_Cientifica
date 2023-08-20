@@ -3,42 +3,42 @@ var valores = [];
 function verificarVetorCompleto(vetor) {
     var cont = 0;
     for (var i in vetor) {
-      if (vetor[i] == "") {
-        cont++;
-      }
+        if (vetor[i] == "") {
+            cont++;
+        }
     }
-    if(cont > 0){
+    if (cont > 0) {
         return false;
-    }else{
+    } else {
         return true;
     }
-    
+
 }
 
-function fecharMsg(status){
+function fecharMsg(status) {
     let divMessage = document.querySelector('.alert');
-    if(status == false){
+    if (status == false) {
         divMessage.innerHTML = "";
         divMessage.style.visibility = "hidden";
     }
-    else{
+    else {
         divMessage.innerHTML = "";
         divMessage.style.visibility = "hidden";
         window.location.reload();
     }
-    
+
 }
 
-function ativarMsg(text, status){
+function ativarMsg(text, status) {
     let divMessage = document.querySelector('.alert');
     divMessage.innerHTML = text;
     divMessage.style.visibility = "visible";
     let button = document.createElement("button");
     button.innerHTML = "OK";
-    button.addEventListener("click", ()=>{fecharMsg(status)});
+    button.addEventListener("click", () => { fecharMsg(status) });
     divMessage.append(button);
 }
-  
+
 const Calcular = () => {
 
     if (sessionStorage.meusValores) {
@@ -63,19 +63,19 @@ const Calcular = () => {
 
     valores = { aX: aX, bX: bX, cX: cX, aY: aY, bY: bY, cY: cY, aZ: aZ, bZ: bZ, cZ: cZ, aN: aN, bN: bN, cN: cN };
 
-    var verificar = verificarVetorCompleto(valores); 
-    
+    var verificar = verificarVetorCompleto(valores);
 
-    if(verificar == false){
+
+    if (verificar == false) {
         let msg = "Todos os campos devem ser preenchidos! Se a incógnita não tem nenhum valor acompanhando então coloque 1 no campo, por exemplo: x+2y-z=0, então x é 1 e z é -1. Agora, se a incógnita não existe, digite 0, por exemplo: 2y+2z=8, então x é 0.<br>";
         ativarMsg(msg, false);
-    }else {
+    } else {
         const dd = ((aX * bY * cZ) + (aY * bZ * cX) + (aZ * bX * cY)) - ((aY * bX * cZ) + (aX * bZ * cY) + (aZ * bY * cX));
         if (dd == 0) {
             msg = "O determinante da matriz de coeficientes desta equação é zero, então não é possível aplicar a Regra de Cramer para encontrar as soluções do sistema de equações lineares 3x3. Isso ocorre porque a Regra de Cramer envolve a divisão de determinantes, e se o determinante da matriz de coeficientes for zero, a divisão por zero é indefinida e não é possível obter as soluções do sistema dessa maneira. Nesse caso, é necessário utilizar outros métodos para resolver o sistema, como a eliminação gaussiana ou a decomposição LU, por exemplo.<br>";
             //window.location.reload();
             ativarMsg(msg, true);
-            
+
         }
         else {
 
@@ -84,19 +84,19 @@ const Calcular = () => {
             let y = (((aX * bN * cZ) + (aN * bZ * cX) + (aZ * bX * cN)) - ((aN * bX * cZ) + (aX * bZ * cN) + (aZ * bN * cX))) / dd;
             let z = (((aX * bY * cN) + (aY * bN * cX) + (aN * bX * cY)) - ((aY * bX * cN) + (aX * bN * cY) + (aN * bY * cX))) / dd;
 
-            let verificaLinha1 = (aX*x)+(aY*y)+(aZ*z);
-            let verificaLinha2 = (bX*x)+(bY*y)+(bZ*z);
-            let verificaLinha3 = (cX*x)+(cY*y)+(cZ*z);
+            let verificaLinha1 = (aX * x) + (aY * y) + (aZ * z);
+            let verificaLinha2 = (bX * x) + (bY * y) + (bZ * z);
+            let verificaLinha3 = (cX * x) + (cY * y) + (cZ * z);
 
-            if(verificaLinha1 == aN && verificaLinha2==bN && verificaLinha3==cN){
+            if (verificaLinha1 == aN && verificaLinha2 == bN && verificaLinha3 == cN) {
                 let exibirResultado = document.getElementById('resultado');
 
-            exibirResultado.innerHTML = `x = ${x} <br> y = ${y} <br> z = ${z} <br>`;
-            exibirResultado.style.visibility = "visible";
-            sessionStorage.meusValores = JSON.stringify(valores);
-            fecharMsg(false);
+                exibirResultado.innerHTML = `x = ${x} <br> y = ${y} <br> z = ${z} <br>`;
+                exibirResultado.style.visibility = "visible";
+                sessionStorage.meusValores = JSON.stringify(valores);
+                fecharMsg(false);
             }
-            else{
+            else {
                 msg = "Esta equação é um Sistema Possível e Indeterminado (SPI): as soluções possíveis são infinitas ou um Sistema Impossível (SI): não é possível apresentar qualquer tipo de solução.<br>";
                 ativarMsg(msg, true);
             }

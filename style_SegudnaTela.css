@@ -1,3 +1,7 @@
+* {
+    font-family: 'Merriweather', serif;
+}
+
 html {
     background-color: purple;
     height: 100%;
@@ -14,17 +18,10 @@ body {
     padding: 20px;
     box-sizing: border-box;
 
-    /* Quando a tela for maior que 500px */
     @media screen and (min-width: 1200px) {
         width: 60%;
     }
-
-    /* Quando a tela for menor que 500px */
-    @media screen and (max-width: 500px) {
-        width: 100%;
-    }
 }
-
 
 .texto,
 .passos {
@@ -33,15 +30,17 @@ body {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    margin-top: 40px;
+    margin-top: 30px;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 .textoPassos,
-.texto {
+.texto,
+h1 {
     text-align: justify;
+    font-size: max(12px, 1.3vw);
 }
 
 .alinhar {
@@ -62,7 +61,6 @@ body {
     text-align: center;
 }
 
-
 #equacao {
     width: 150px;
 }
@@ -71,17 +69,10 @@ span {
     margin: 20px;
 }
 
-h1 {
-    font-size: 25px;
-}
-
-p {
-    font-size: 18px;
-}
-
 button {
     font-size: 30px;
     margin-bottom: 100px;
+    width: 100%;
 }
 
 #valorDeX,
