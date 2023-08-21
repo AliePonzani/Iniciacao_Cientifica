@@ -45,8 +45,8 @@ const Calcular = () => {
         valores = JSON.parse(sessionStorage.getItem('meusValores'));
     }
 
-    //Tenha como base que a representa a primeira linha da matriz, b a segunda linha e c a terceira linha
-    //Assim como X representa os valores de x, Y de y, Z de z e N o total.
+    //Tenha como base que "a" representa a primeira linha da matriz, "b" a segunda linha e "c" a terceira linha
+    //Assim como "X" representa os valores de "x", "Y" de "y", "Z" de "z" e "N" o "total".
     var aX = document.getElementById('aX').value;
     var aY = document.getElementById('bY').value;
     var aZ = document.getElementById('cZ').value;
@@ -73,13 +73,12 @@ const Calcular = () => {
         const dd = ((aX * bY * cZ) + (aY * bZ * cX) + (aZ * bX * cY)) - ((aY * bX * cZ) + (aX * bZ * cY) + (aZ * bY * cX));
         if (dd == 0) {
             msg = "O determinante da matriz de coeficientes desta equação é zero, então não é possível aplicar a Regra de Cramer para encontrar as soluções do sistema de equações lineares 3x3. Isso ocorre porque a Regra de Cramer envolve a divisão de determinantes, e se o determinante da matriz de coeficientes for zero, a divisão por zero é indefinida e não é possível obter as soluções do sistema dessa maneira. Nesse caso, é necessário utilizar outros métodos para resolver o sistema, como a eliminação gaussiana ou a decomposição LU, por exemplo.<br>";
-            //window.location.reload();
             ativarMsg(msg, true);
 
         }
         else {
 
-            cliqueAqui.href = "SegundaTela.html"; //https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html
+            cliqueAqui.href = "https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html";
             let x = (((aN * bY * cZ) + (aY * bZ * cN) + (aZ * bN * cY)) - ((aY * bN * cZ) + (aN * bZ * cY) + (aZ * bY * cN))) / dd;
             let y = (((aX * bN * cZ) + (aN * bZ * cX) + (aZ * bX * cN)) - ((aN * bX * cZ) + (aX * bZ * cN) + (aZ * bN * cX))) / dd;
             let z = (((aX * bY * cN) + (aY * bN * cX) + (aN * bX * cY)) - ((aY * bX * cN) + (aX * bN * cY) + (aN * bY * cX))) / dd;
