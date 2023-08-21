@@ -1,6 +1,6 @@
 # Calculadora de Equações Lineares 3x3
 
-Este é um projeto desenvolvido por [Aline Fernanda Ponzani] como parte do Programa de Pesquisa do Senac (PICTA - Programa de Pesquisa do Senac), sob a orientação do professor Alexandre Saron. O objetivo deste projeto é criar um site interativo para resolver equações lineares e apresentar o passo a passo da resolução, proporcionando uma ferramenta educativa para os alunos do curso de Análise e Desenvolvimento de Sistemas do Senac.
+Este é um projeto desenvolvido por Aline Fernanda Ponzani como parte do Programa de Pesquisa do Senac (PICTA - Programa de Pesquisa do Senac), sob a orientação do professor Alexandre Saron. O objetivo deste projeto é criar um site interativo para resolver equações lineares e apresentar o passo a passo da resolução, proporcionando uma ferramenta educativa para os alunos do curso de Análise e Desenvolvimento de Sistemas do Senac.
 
 ## Visão Geral do Projeto
 
@@ -10,7 +10,15 @@ O **Calculadora de Equações Lineares 3x3** é um site desenvolvido utilizando 
 
 - **Resolução de Equações Lineares:** Os alunos podem inserir os valores das incógnitas da equação e o site irá calcular e apresentar as soluções correspondentes.
 
+<div align="center">
+    <img src="https://github.com/AliePonzani/Iniciacao_Cientifica/assets/115513954/e64b656d-71c0-49b4-99d1-70be82b9eb55" width="500px"/>
+</div>
+
 - **Passo a Passo da Resolução:** Além do resultado final, que será apresentado instataneamente na **Tela Inicial**, o site da ao usuário a opção de visualizar cada passo da resolução da equação, detalhando as operações realizadas em cada etapa.
+
+<div align="center">
+    <img src="Animação.gif" width="500px"/>
+</div>
 
 - **Interface Intuitiva:** A interface do site é projetada de forma intuitiva e amigável, tornando fácil para os alunos inserirem os dados necessários e visualizarem as resoluções.
 
@@ -24,7 +32,7 @@ O **Calculadora de Equações Lineares 3x3** é um site desenvolvido utilizando 
 
 ## Como Utilizar o Site
 
-1. Acesse o site através do link [https://alieponzani.github.io/Iniciacao_Cientifica/].
+1. Acesse o site através do link **https://alieponzani.github.io/Iniciacao_Cientifica/**.
 
 2. Insira os valores na área designada ao lado de cada incógnita, se não houver nenhum valor (Ex: x + y + z = 6) deverá ser colocado 1 no campo (Ficará: 1 + 1 + 1 = 6) e se não houver uma das incógnitas o campo deverá ser completado com o 0.
 
