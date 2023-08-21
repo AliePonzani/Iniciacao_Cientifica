@@ -1,3 +1,7 @@
+* {
+  font-family: 'Merriweather', serif;
+}
+
 html {
   background-color: purple;
   height: 100vw;
@@ -117,7 +121,7 @@ button {
   border: solid white;
   color: purple;
   width: 55px;
-  font-size: 25px;
+  font-size: max(22px, 1.5vw);
   cursor: pointer;
   
 }
@@ -145,12 +149,13 @@ li {
 
 .alert {
   visibility: hidden;
+  width: fit-content;
   padding: 20px;
   position: fixed;
   top: 25%;
   text-align: center;
   background-color: purple;
   color: white;
-  font-size: 30px;
+  font-size: max(22px, 1.5vw);
   border-radius: 12px;
 }
