@@ -17,7 +17,7 @@ O **Calculadora de Equações Lineares 3x3** é um site desenvolvido utilizando 
 - **Passo a Passo da Resolução:** Além do resultado final, que será apresentado instataneamente na **Tela Inicial**, o site da ao usuário a opção de visualizar cada passo da resolução da equação, detalhando as operações realizadas em cada etapa.
 
 <div align="center">
-    <img src="Animação.gif" width="500px"/>
+    <img src="https://github.com/AliePonzani/Iniciacao_Cientifica/assets/115513954/b6164525-286c-47e3-8164-7b1cba3feeed" width="500px"/>
 </div>
 
 - **Interface Intuitiva:** A interface do site é projetada de forma intuitiva e amigável, tornando fácil para os alunos inserirem os dados necessários e visualizarem as resoluções.
