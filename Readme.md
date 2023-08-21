@@ -1,6 +1,6 @@
 # Calculadora de Equações Lineares 3x3
 
-Este é um projeto desenvolvido por Aline Fernanda Ponzani como parte do Programa de Pesquisa do Senac (PICTA - Programa de Pesquisa do Senac), sob a orientação do professor Alexandre Saron. O objetivo deste projeto é criar um site interativo para resolver equações lineares e apresentar o passo a passo da resolução, proporcionando uma ferramenta educativa para os alunos do curso de Análise e Desenvolvimento de Sistemas do Senac.
+Este é um projeto desenvolvido por Aline Fernanda Ponzani como parte do PICTA (Programa de Pesquisa do Senac), sob a orientação do professor Alexandre Saron. O objetivo deste projeto é criar um site interativo para resolver equações lineares e apresentar o passo a passo da resolução, proporcionando uma ferramenta educativa para os alunos do curso de Análise e Desenvolvimento de Sistemas do Senac.
 
 ## Visão Geral do Projeto
 
@@ -42,12 +42,11 @@ O **Calculadora de Equações Lineares 3x3** é um site desenvolvido utilizando 
 
 ## Agradecimentos
 
-Agradeço à faculdade Senac e ao professor Alexandre Saron por me proporcionarem a oportunidade de desenvolver este projeto como parte do Programa de Pesquisa do Senac. Sua orientação e apoio foram fundamentais para o sucesso deste trabalho.
+Agradeço ao CNPq pela concessão de bolsa PIBIT de Iniciação Científica, à Diretoria de Graduação do
+Centro Universitário Senac e ao professor orientador Alexandre Saron por me proporcionarem a oportunidade de desenvolver este projeto. Sua orientação e apoio foram fundamentais para o sucesso deste trabalho.
 
 ## Contato
 
-Se tiver alguma dúvida, sugestão ou feedback, sinta-se à vontade para entrar em contato comigo pelo seguinte e-mail: [seu endereço de e-mail].
+Se tiver alguma dúvida, sugestão ou feedback, sinta-se à vontade para entrar em contato comigo pelo e-mail alinef.ponzani@gmail.com ou através do LinkedIn https://www.linkedin.com/in/aline-ponzani/ .
 
 ---
-
-*Nota: Este é um documento README fictício criado com base nas informações fornecidas. Certifique-se de substituir os espaços reservados ([seu nome], [insira o link aqui], [seu endereço de e-mail], etc.) pelas informações reais antes de adicionar este arquivo ao seu repositório no GitHub.*
