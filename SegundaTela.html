@@ -27,7 +27,10 @@
         </div>
 
         <div class="passos"><!--Matriz da equação-->
-            <div class="textoPassos">1. Escrevemos o sistema de equações na forma matricial:</div>
+            <div class="textoPassos">
+                <p>1. Escrevemos o sistema de equações na forma matricial:</p>
+            </div>
+            
             <div class="alinhar">
                 <div id="equacao">
 
@@ -70,15 +73,16 @@
             </p>
         </div>
 
-
         <div class="passos"><!--Matriz do Determinante-->
-            <div class="textoPassos">2. Agora vamos calcular o determinante da matriz, para isso colocaremos os
-                coeficientes das
-                incógnitas X e Y no lugar de N, depois multiplicamos os valores das transversais e depois somamos os
-                valores de cada trasversal da esquerda pra direita (ROXO) e depois da dreita para a esquerda (AZUL),
-                tendo esses valores,
-                subtraimos um pelo outro , ficará assim:
+            <div class="textoPassos">
+                <p>
+                    2. Agora vamos calcular o determinante da matriz, para isso colocaremos os coeficientes das incógnitas X
+                    e Y no lugar de N. Depois multiplicamos os valores das transversais e depois somamos os valores da
+                    trasversal principal(ROXO) e depois da transversal secundária (AZUL), então tendo esses
+                    valores, subtraimos um pelo outro , ficará assim:
+                </p>
             </div>
+            
             <div class="tabelaMatriz">
                 <table>
                     <thead>
@@ -118,7 +122,7 @@
                 <p id="D2"></p>
                 <p id="D3"></p>
             </div>
-            <p id="D"></p>
+            <p class="resultado" id="D"></p>
         </div>
 
 
@@ -167,7 +171,7 @@
                 <p id="DX2"></p>
                 <p id="DX3"></p>
             </div>
-            <p id="DX"></p>
+            <p class="resultado" id="DX"></p>
 
         </div>
 
@@ -214,7 +218,7 @@
                 <p id="DY2"></p>
                 <p id="DY3"></p>
             </div>
-            <p id="DY"></p>
+            <p class="resultado" id="DY"></p>
 
         </div>
 
@@ -262,7 +266,7 @@
                 <p id="DZ2"></p>
                 <p id="DZ3"></p>
             </div>
-            <p id="DZ"></p>
+            <p class="resultado" id="DZ"></p>
         </div>
 
         <div class="passos">
@@ -271,15 +275,17 @@
                 de X, Y e Z basta dividir os valores de Dx, Dy e Dz por D individualmente, veja:
             </div>
             <p>
-            <div id="valorDeX"></div>
-            <div id="valorDeY"></div>
-            <div id="valorDeZ"></div>
+            <div class="resultado" id="valorDeX"></div>
+            <div class="resultado" id="valorDeY"></div>
+            <div class="resultado" id="valorDeZ"></div>
             </p>
         </div>
 
         <div class="passos">
             <h2>Tirando a Prova</h2>
-            <p id="prova"></p>
+            <p>
+                <div id="prova"></div>
+            </p>
         </div>
 
         <div class="texto">
@@ -297,7 +303,6 @@
             </p>
         </div>
         <div class="texto">
-
             <p>
                 Agora que tal nos ajudar a melhorar cada vez mais este site e assim poder contribuir ainda mais para seu
                 aprendizado e de outros alunos.</br> Responda a pesquisa e nos conte um pouco sobre sua experiência por
