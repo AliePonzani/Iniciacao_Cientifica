@@ -65,7 +65,6 @@ const Calcular = () => {
 
     var verificar = verificarVetorCompleto(valores);
 
-
     if (verificar == false) {
         let msg = "Todos os campos devem ser preenchidos! Se a incógnita não tem nenhum valor acompanhando então coloque 1 no campo, por exemplo: x+2y-z=0, então x é 1 e z é -1. Agora, se a incógnita não existe, digite 0, por exemplo: 2y+2z=8, então x é 0.<br>";
         ativarMsg(msg, false);
@@ -78,7 +77,7 @@ const Calcular = () => {
         }
         else {
 
-            cliqueAqui.href = "SegundaTela.html"; //https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html
+            cliqueAqui.href = "https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html";
             let x = (((aN * bY * cZ) + (aY * bZ * cN) + (aZ * bN * cY)) - ((aY * bN * cZ) + (aN * bZ * cY) + (aZ * bY * cN))) / dd;
             let y = (((aX * bN * cZ) + (aN * bZ * cX) + (aZ * bX * cN)) - ((aN * bX * cZ) + (aX * bZ * cN) + (aZ * bN * cX))) / dd;
             let z = (((aX * bY * cN) + (aY * bN * cX) + (aN * bX * cY)) - ((aY * bX * cN) + (aX * bN * cY) + (aN * bY * cX))) / dd;
