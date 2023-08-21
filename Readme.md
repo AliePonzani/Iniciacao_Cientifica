@@ -1,5 +1,7 @@
 # Calculadora de Equações Lineares 3x3
 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/AliePonzani/Iniciacao_Cientifica/blob/main/LICENSE)
+
 Este é um projeto desenvolvido por Aline Fernanda Ponzani como parte do PICTA (Programa de Pesquisa do Senac), sob a orientação do professor Alexandre Saron. O objetivo deste projeto é criar um site interativo para resolver equações lineares e apresentar o passo a passo da resolução, proporcionando uma ferramenta educativa para os alunos do curso de Análise e Desenvolvimento de Sistemas do Senac.
 
 ## Visão Geral do Projeto
