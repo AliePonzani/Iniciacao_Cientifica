@@ -13,13 +13,13 @@ O **Calculadora de Equações Lineares 3x3** é um site desenvolvido utilizando 
 - **Resolução de Equações Lineares:** Os alunos podem inserir os valores das incógnitas da equação e o site irá calcular e apresentar as soluções correspondentes.
 
 <div align="center">
-    <img src="https://github.com/AliePonzani/Iniciacao_Cientifica/assets/115513954/e64b656d-71c0-49b4-99d1-70be82b9eb55" width="500px"/>
+    <img src="https://github.com/AliePonzani/Iniciacao_Cientifica/assets/115513954/45723ede-1d06-48f4-8bff-ab516e360ebd" width="500px"/>
 </div>
 
 - **Passo a Passo da Resolução:** Além do resultado final, que será apresentado instataneamente na **Tela Inicial**, o site da ao usuário a opção de visualizar cada passo da resolução da equação, detalhando as operações realizadas em cada etapa.
 
 <div align="center">
-    <img src="https://github.com/AliePonzani/Iniciacao_Cientifica/assets/115513954/b6164525-286c-47e3-8164-7b1cba3feeed" width="500px"/>
+    <img src="https://github.com/AliePonzani/Iniciacao_Cientifica/assets/115513954/bfab8a60-824b-4df2-9b66-a2fb57954aa9" width="500px"/>
 </div>
 
 - **Interface Intuitiva:** A interface do site é projetada de forma intuitiva e amigável, tornando fácil para os alunos inserirem os dados necessários e visualizarem as resoluções.
