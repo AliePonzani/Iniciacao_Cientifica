@@ -8,37 +8,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
-    <link href="style_SegudnaTela.css" rel="stylesheet" id="  " type="text/css" />
+    <link href="style_SegundaTela.css" rel="stylesheet" type="text/css" />
     <script src="script_SegundaTela.js"></script>
     <title>Passo a Passo</title>
 </head>
 
 <body>
-    <!-- <input class="_0_0" type="hidden"></input> -->
     <div class="container">
-        <div class="texto">
-            <h1>Legal!<br>
-                Se esta aqui então realmente quer entender o que rola por trás para resolver este sistema
-                de equação e vamos fazer o possivel para te mostrar cada etapa para que você entenda. Vamos la?!
-            </h1>
-            <p>Para resolver o sistema de equações lineares 3x3, que você colocou na tela anterior,
-                usando a Regra de Cramer, seguimos estes passos:
-            </p>
+        <div class="passos">
+            <div class="textoPassos">
+                <h2>Legal!</h2>
+                <p> Se esta aqui então realmente quer entender o que rola por trás para resolver este sistema
+                    de equação e vamos fazer o possivel para te mostrar cada etapa para que você entenda. Vamos
+                    la?!</br></br>
+                    Para resolver o sistema de equações lineares 3x3, que você colocou na tela anterior,
+                    usando a Regra de Cramer, seguimos estes passos:
+                </p>
+            </div>
         </div>
 
         <div class="passos"><!--Matriz da equação-->
             <div class="textoPassos">
                 <p>1. Escrevemos o sistema de equações na forma matricial:</p>
             </div>
-            
+
             <div class="alinhar">
                 <div id="equacao">
 
                 </div>
+                <span>FICARÁ =></span>
                 <div class="tabelaMatriz">
-
-                    <span>FICARÁ =></span>
-
                     <table class="matriz">
                         <thead>
                             <th>x</th>
@@ -76,13 +75,14 @@
         <div class="passos"><!--Matriz do Determinante-->
             <div class="textoPassos">
                 <p>
-                    2. Agora vamos calcular o determinante da matriz, para isso colocaremos os coeficientes das incógnitas X
+                    2. Agora vamos calcular o determinante da matriz, para isso colocaremos os coeficientes das
+                    incógnitas X
                     e Y no lugar de N. Depois multiplicamos os valores das transversais e depois somamos os valores da
                     trasversal principal(ROXO) e depois da transversal secundária (AZUL), então tendo esses
                     valores, subtraimos um pelo outro , ficará assim:
                 </p>
             </div>
-            
+
             <div class="tabelaMatriz">
                 <table>
                     <thead>
@@ -127,10 +127,13 @@
 
 
         <div class="passos"><!--Matriz de Dx-->
-            <div class="textoPassos">3. Agora que temos o valor do determinante da matriz (D), calcularemos o
+            <div class="textoPassos">
+                <p>
+                    3. Agora que temos o valor do determinante da matriz (D), calcularemos o
                 determinante da matriz de X (Dx) resultante ao substituir as colunas dos coeficientes de X pela coluna
                 dos termos
                 independentes(N), faremos o mesmo calcula do passo anterior, ficará assim:
+                </p>
             </div>
             <div class="tabelaMatriz">
                 <table>
@@ -176,9 +179,12 @@
         </div>
 
         <div class="passos"><!--Matriz da DY-->
-            <div class="textoPassos">4. Agora repetimos o passo 3 mas dessa vez ao invés de substituir as colunas de
-                X vamos substituir as de Y e encontraremos o determinante da matriz de Y (Dy):
-            </div>
+            <div class="textoPassos">
+                <p>
+                    4. Agora repetimos o passo 3 mas dessa vez ao invés de substituir as colunas de
+                    X vamos substituir as de Y e encontraremos o determinante da matriz de Y (Dy):    
+                </p>
+                </div>
             <div class="tabelaMatriz">
                 <table class="matriz_D">
                     <thead>
@@ -223,8 +229,11 @@
         </div>
 
         <div class="passos"><!--Matriz da DZ-->
-            <div class="textoPassos">5. Por fim iremos substituir a coluna de Z e realizar o mesmo processo dos passos 3
-                e 4 para encontrar o determinante de Z (Dz):
+            <div class="textoPassos">
+                <p>
+                    5. Por fim iremos substituir a coluna de Z e realizar o mesmo processo dos passos 3
+                    e 4 para encontrar o determinante de Z (Dz):
+                </p>
             </div>
             <div class="tabelaMatriz">
                 <table>
@@ -270,28 +279,30 @@
         </div>
 
         <div class="passos">
-            <div class="textoPassos">6. Pronto, já temos todos os determinantes, agora para finalizar e descobrirmos
-                os valores
-                de X, Y e Z basta dividir os valores de Dx, Dy e Dz por D individualmente, veja:
-            </div>
+            <div class="textoPassos">
+                <p>
+                    6. Pronto, já temos todos os determinantes, agora para finalizar e descobrirmos
+                    os valores
+                    de X, Y e Z basta dividir os valores de Dx, Dy e Dz por D individualmente, veja:    
+                </p>
+                </div>
             <p>
-            <div class="resultado" id="valorDeX"></div>
-            <div class="resultado" id="valorDeY"></div>
-            <div class="resultado" id="valorDeZ"></div>
+            <p class="resultado" id="valorDeX"></p>
+            <p class="resultado" id="valorDeY"></p>
+            <p class="resultado" id="valorDeZ"></p>
             </p>
         </div>
 
         <div class="passos">
-            <h2>Tirando a Prova</h2>
+            <p>Tirando a Prova</p>
             <p>
-                <div id="prova"></div>
+            <p id="prova"></p>
             </p>
         </div>
 
-        <div class="texto">
-            <p>Essa é a Regra de Cramer para sistemas de equações lineares 3x3. Lembre-se que essa regra só pode ser
-                aplicada se o determinante da matriz de coeficientes D for diferente de zero.</br>
-                Se o determinante da matriz de coeficientes D for igual a zero, então não é possível aplicar a Regra de
+        <div class="passos">
+            <p class="textoPassos">Essa é a Regra de Cramer para sistemas de equações lineares 3x3. </br> Lemvre-se, 
+                se o determinante da matriz de coeficientes (D) for igual a zero, então não é possível aplicar a Regra de
                 Cramer para encontrar as soluções do sistema de equações lineares 3x3.
                 Isso ocorre porque a Regra de Cramer envolve a divisão de determinantes, e se o determinante da matriz
                 de coeficientes for zero, a divisão por zero é indefinida e não é possível obter as soluções do sistema
@@ -302,8 +313,8 @@
                 zero.
             </p>
         </div>
-        <div class="texto">
-            <p>
+        <div class="passos">
+            <p class="textoPassos">
                 Agora que tal nos ajudar a melhorar cada vez mais este site e assim poder contribuir ainda mais para seu
                 aprendizado e de outros alunos.</br> Responda a pesquisa e nos conte um pouco sobre sua experiência por
                 aqui clicando neste link " <a href="https://forms.gle/UghAhW3ixDDNRBfX8">PESQUISA DE EXPERIÊNCIA DO
@@ -313,10 +324,11 @@
         <button class="passos">
             <a href="https://alieponzani.github.io/Iniciacao_Cientifica/">Fazer novo calculo</a>
         </button>
+        <div class="creditos">
+            <a href="https://github.com/AliePonzani/Iniciacao_Cientifica">Link Repositório&lt;/&gt;</a>
+        </div>
     </div>
-    <div class="creditos">
-        <a href="https://github.com/AliePonzani/Iniciacao_Cientifica">Link Repositório&lt;/&gt;</a>
-    </div>
+    
 </body>
 
 </html>
