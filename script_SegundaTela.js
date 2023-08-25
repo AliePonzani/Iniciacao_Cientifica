@@ -1,89 +1,185 @@
 var valor = JSON.parse(sessionStorage.getItem('meusValores'));//Tras os valores da tela inicial
 var Determinante = ((valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX));//Resultado do calculo do determinante
 
+function criarTabela(cabecalho, dados) {
+    var table = document.createElement('table');
+    var thead = document.createElement('thead');
+    var tbody = document.createElement('tbody');
+
+    // Cria a linha de cabeçalho
+    var theadRow = document.createElement('tr');
+    cabecalho.forEach(function (headerText) {
+        var th = document.createElement('th');
+        th.appendChild(document.createTextNode(headerText));
+        theadRow.appendChild(th);
+    });
+    thead.appendChild(theadRow);
+    table.appendChild(thead);
+
+    // Cria as linhas de dados
+    dados.forEach(function (rowData) {
+        var tr = document.createElement('tr');
+        rowData.forEach(function (cellData) {
+            var td = document.createElement('td');
+            td.appendChild(document.createTextNode(cellData));
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+
+    return table;
+}
+
+function TabelaMatriz() {
+    let resultado = document.getElementById('equacao');
+    resultado.innerHTML = "";
+    resultado.innerHTML = `<p>${valor.aX}x + ${valor.aY}y + ${valor.aZ}z = ${valor.aN}<br>${valor.bX}x + ${valor.bY}y + ${valor.bZ}z = ${valor.bN}<br>${valor.cX}x + ${valor.cY}y + ${valor.cZ}z = ${valor.cN}</p>`;
+    
+    var cabecalho = ['x', 'y', 'z', 'N'];
+    var dados = [[valor.aX, valor.aY, valor.aZ, valor.aN],
+                [valor.bX, valor.bY, valor.bZ, valor.bN],
+                [valor.cX, valor.cY, valor.cZ, valor.cN]];
+
+    var tabela = criarTabela(cabecalho, dados);
+    document.getElementById('tabela_Matriz').appendChild(tabela);
+}
 
 //Passo a passo de como foi realizado o calculo do determinante
 function Calculo_D() {
-    let D1_esquerda = document.getElementById('D1_esquerda');
-    let D1_direita = document.getElementById('D1_direita');
-    let D2_esquerda = document.getElementById('D2_esquerda');
-    let D2_direita = document.getElementById('D2_direita');
-    let D3_esquerda = document.getElementById('D3_esquerda');
-    let D3_direita = document.getElementById('D3_direita');
-    let D = document.getElementById('D');
 
-    D1_esquerda.innerHTML = `((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY}))`;
-    D1_direita.innerHTML = `((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX}))`;
-    D2_esquerda.innerHTML = `(${valor.aX * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cY})`;
-    D2_direita.innerHTML = `(${valor.aY * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cX})`;
-    D3_esquerda.innerHTML = `${(valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)}`;
-    D3_direita.innerHTML = `${(valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX)}`;
-    D.innerHTML = `D= ${Determinante}`;
+    var cabecalho = ['x', 'y', 'z', 'x', 'y'];
+    var dados = [[valor.aX, valor.aY, valor.aZ, valor.aX, valor.aY],
+    [valor.bX, valor.bY, valor.bZ, valor.bX, valor.bY],
+    [valor.cX, valor.cY, valor.cZ, valor.cX, valor.cY]];
+
+    var tabela = criarTabela(cabecalho, dados);
+    document.getElementById('tabela_D').appendChild(tabela);
+
+    const calculo_D = document.getElementById("calculo_D");
+
+    calculo_D.innerHTML = `
+        <div>
+            D = <p class="esquerda"> ((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY})) </p> - 
+                <p class="direita"> ((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX})) </p>
+        </div>
+        <div>
+            D = <p class="esquerda"> (${valor.aX * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cY}) </p> - 
+                <p class="direita"> (${valor.aY * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cX}) </p>
+        </div>
+        <div>
+            D = <p class="esquerda"> ${(valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)} </p> - 
+                <p class="direita"> ${(valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX)} </p>
+        </div>
+        <div>
+            D = <p> ${Determinante} </p>
+        </div>
+    `;
+
 }
 
 function Calculo_DX() {
 
-    let DX1_esquerda = document.getElementById('DX1_esquerda');
-    let DX1_direita = document.getElementById('DX1_direita');
-    let DX2_esquerda = document.getElementById('DX2_esquerda');
-    let DX2_direita = document.getElementById('DX2_direita');
-    let DX3_esquerda = document.getElementById('DX3_esquerda');
-    let DX3_direita = document.getElementById('DX3_direita');
-    let DX = document.getElementById('DX');
-    let valorDeX = document.getElementById('valorDeX');
+    var cabecalho = ['N', 'y', 'z', 'N', 'y'];
+    var dados = [[valor.aN, valor.aY, valor.aZ, valor.aN, valor.aY],
+    [valor.bN, valor.bY, valor.bZ, valor.bN, valor.bY],
+    [valor.cN, valor.cY, valor.cZ, valor.cN, valor.cY]];
+
+    var tabela = criarTabela(cabecalho, dados);
+    document.getElementById('tabela_Dx').appendChild(tabela);
+
+    const calculo_Dx = document.getElementById("calculo_Dx");
+    const valor_Dx = document.getElementById('valorDeX');
     var resultado = ((valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)) - ((valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN));
-    DX1_esquerda.innerHTML = `((${valor.aN} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cY}))`;
-    DX1_direita.innerHTML = `((${valor.aY} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cN}))`;
-    DX2_esquerda.innerHTML = `(${valor.aN * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cY})`;
-    DX2_direita.innerHTML = `(${valor.aY * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cN})`;
-    DX3_esquerda.innerHTML = `${(valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)}`;
-    DX3_direita.innerHTML = `${(valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN)}`;
-    DX.innerHTML = `Dx= ${resultado}`;
-    valorDeX.innerHTML = `${resultado}/${Determinante} então x = ${resultado / Determinante}`;
+
+    calculo_Dx.innerHTML = `
+        <div>
+            Dx = <p class="esquerda"> ((${valor.aN} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cY})) </p> - 
+                <p class="direita"> ((${valor.aY} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cN})) </p>
+        </div>
+        <div>
+            Dx = <p class="esquerda"> (${valor.aN * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cY}) </p> - 
+                <p class="direita"> (${valor.aY * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cN}) </p>
+        </div>
+        <div>
+            Dx = <p class="esquerda"> ${(valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)} </p> - 
+                <p class="direita"> ${(valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN)} </p>
+        </div>
+        <div>
+            Dx = <p> ${resultado} </p>
+        </div>
+    `;
+    valor_Dx.innerHTML = `${resultado}÷${Determinante} então x = ${resultado / Determinante}`;
+
 }
 
 function Calculo_DY() {
 
-    let DY1_esquerda = document.getElementById('DY1_esquerda');
-    let DY1_direita = document.getElementById('DY1_direita');
-    let DY2_esquerda = document.getElementById('DY2_esquerda');
-    let DY2_direita = document.getElementById('DY2_direita');
-    let DY3_esquerda = document.getElementById('DY3_esquerda');
-    let DY3_direita = document.getElementById('DY3_direita');
-    let DY = document.getElementById('DY');
-    let valorDeY = document.getElementById('valorDeY');
+    var cabecalho = ['x', 'N', 'z', 'x', 'N'];
+    var dados = [[valor.aX, valor.aN, valor.aZ, valor.aX, valor.aN],
+    [valor.bX, valor.bN, valor.bZ, valor.bX, valor.bN],
+    [valor.cX, valor.cN, valor.cZ, valor.cX, valor.cN]];
 
+    var tabela = criarTabela(cabecalho, dados);
+    document.getElementById('tabela_Dy').appendChild(tabela);
+
+    const calculo_Dy = document.getElementById("calculo_Dy");
+    const valor_Dy = document.getElementById('valorDeY');
     var resultado = ((valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)) - ((valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX));
-    DY1_esquerda.innerHTML = `((${valor.aX} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cN}))`;
-    DY1_direita.innerHTML = `((${valor.aN} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cX}))`;
-    DY2_esquerda.innerHTML = `(${valor.aX * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cN})`;
-    DY2_direita.innerHTML = `(${valor.aN * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cX})`;
-    DY3_esquerda.innerHTML = `${(valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)}`;
-    DY3_direita.innerHTML = `${(valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX)}`;
-    DY.innerHTML = `Dy=  ${resultado}`;
-    valorDeY.innerHTML = `${resultado}/${Determinante} então y = ${resultado / Determinante}`;
+
+    calculo_Dy.innerHTML = `
+        <div>
+            Dy = <p class="esquerda"> ((${valor.aX} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cN})) </p> - 
+                <p class="direita"> ((${valor.aN} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cX})) </p>
+        </div>
+        <div>
+            Dy = <p class="esquerda"> (${valor.aX * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cN}) </p> - 
+                <p class="direita"> (${valor.aN * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cX}) </p>
+        </div>
+        <div>
+            Dy = <p class="esquerda"> ${(valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)} </p> - 
+                <p class="direita"> ${(valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX)} </p>
+        </div>
+        <div>
+            Dy = <p> ${resultado} </p>
+        </div>
+    `;
+    valor_Dy.innerHTML = `${resultado}÷${Determinante} então y = ${resultado / Determinante}`;
 
 }
 
 function Calculo_DZ() {
 
-    let DZ1_esquerda = document.getElementById('DZ1_esquerda');
-    let DZ1_direita = document.getElementById("DZ1_direita");
-    let DZ2_esquerda = document.getElementById('DZ2_esquerda');
-    let DZ2_direita = document.getElementById("DZ2_direita");
-    let DZ3_esquerda = document.getElementById('DZ3_esquerda');
-    let DZ3_direita = document.getElementById("DZ3_direita");
-    let DZ = document.getElementById('DZ');
-    let valorDeZ = document.getElementById('valorDeZ');
+    var cabecalho = ['x', 'y', 'N', 'x', 'y'];
+    var dados = [[valor.aX, valor.aY, valor.aN, valor.aX, valor.aY],
+                [valor.bX, valor.bY, valor.bN, valor.bX, valor.bY],
+                [valor.cX, valor.cY, valor.cN, valor.cX, valor.cY]];
+
+    var tabela = criarTabela(cabecalho, dados);
+    document.getElementById('tabela_Dz').appendChild(tabela);
+
+    const calculo_Dz = document.getElementById("calculo_Dz");
+    const valor_Dz = document.getElementById('valorDeZ');
     var resultado = ((valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX));
-    DZ1_esquerda.innerHTML = ` ((${valor.aX} * ${valor.bY} * ${valor.cN}) + (${valor.aY} * ${valor.bN} * ${valor.cX}) + (${valor.aN} * ${valor.bX} * ${valor.cY})) `;
-    DZ1_direita.innerHTML = ` ((${valor.aY} * ${valor.bX} * ${valor.cN}) + (${valor.aX} * ${valor.bN}* ${valor.cY}) + (${valor.aN} * ${valor.bY} * ${valor.cX}))`;
-    DZ2_esquerda.innerHTML = ` (${valor.aX * valor.bY * valor.cN} + ${valor.aY * valor.bN * valor.cX} + ${valor.aN * valor.bX * valor.cY})`;
-    DZ2_direita.innerHTML = `(${valor.aY * valor.bX * valor.cN} + ${valor.aX * valor.bN * valor.cY} + ${valor.aN * valor.bY * valor.cX})`;
-    DZ3_esquerda.innerHTML = `  ${(valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)}`;
-    DZ3_direita.innerHTML = `${(valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX)}`;
-    DZ.innerHTML = `Dz= ${resultado}`;
-    valorDeZ.innerHTML = `${resultado}/${Determinante} então z = ${resultado / Determinante}`;
+
+    calculo_Dz.innerHTML = `
+        <div>
+            Dz = <p class="esquerda"> ((${valor.aX} * ${valor.bY} * ${valor.cN}) + (${valor.aY} * ${valor.bN} * ${valor.cX}) + (${valor.aN} * ${valor.bX} * ${valor.cY})) </p> - 
+                <p class="direita"> ((${valor.aY} * ${valor.bX} * ${valor.cN}) + (${valor.aX} * ${valor.bN}* ${valor.cY}) + (${valor.aN} * ${valor.bY} * ${valor.cX})) </p>
+        </div>
+        <div>
+            Dz = <p class="esquerda"> (${valor.aX * valor.bY * valor.cN} + ${valor.aY * valor.bN * valor.cX} + ${valor.aN * valor.bX * valor.cY}) </p> - 
+                <p class="direita"> (${valor.aY * valor.bX * valor.cN} + ${valor.aX * valor.bN * valor.cY} + ${valor.aN * valor.bY * valor.cX}) </p>
+        </div>
+        <div>
+            Dz = <p class="esquerda"> ${(valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)} </p> - 
+                <p class="direita"> ${(valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX)} </p>
+        </div>
+        <div>
+            Dz = <p> ${resultado} </p>
+        </div>
+    `;
+    valor_Dz.innerHTML = `${resultado}÷${Determinante} então z = ${resultado / Determinante}`;
 }
 
 function Prova() {
@@ -97,46 +193,6 @@ function Prova() {
 
     let prova = document.getElementById('prova');
     prova.innerHTML = `(${valor.aX}*${resultadoX}) + (${valor.aY}*${resultadoY}) + (${valor.aZ}*${resultadoZ}) = ${totalLinha1}<br>(${valor.bX}*${resultadoX}) + (${valor.bY}*${resultadoY}) + (${valor.bZ}*${resultadoZ}) = ${totalLinha2}<br>(${valor.cX}*${resultadoX}) + (${valor.cY}*${resultadoY}) + (${valor.cZ}*${resultadoZ}) = ${totalLinha3}<br>`;
-}
-
-function Chamar() {
-    let resultado = document.getElementById('equacao');
-    resultado.innerHTML = "";
-    resultado.innerHTML = `<p>${valor.aX}x + ${valor.aY}y + ${valor.aZ}z = ${valor.aN}<br>${valor.bX}x + ${valor.bY}y + ${valor.bZ}z = ${valor.bN}<br>${valor.cX}x + ${valor.cY}y + ${valor.cZ}z = ${valor.cN}</p>`;
-
-    let aX = document.getElementsByClassName('aX');
-    let bX = document.getElementsByClassName('bX');
-    let cX = document.getElementsByClassName('cX');
-    let aY = document.getElementsByClassName('aY');
-    let bY = document.getElementsByClassName('bY');
-    let cY = document.getElementsByClassName('cY');
-    let aZ = document.getElementsByClassName('aZ');
-    let bZ = document.getElementsByClassName('bZ');
-    let cZ = document.getElementsByClassName('cZ');
-    let aN = document.getElementsByClassName('aN');
-    let bN = document.getElementsByClassName('bN');
-    let cN = document.getElementsByClassName('cN');
-
-    for (var i = 0; i < aX.length; i++) {
-        aX[i].innerHTML = valor.aX;
-        bX[i].innerHTML = valor.bX;
-        cX[i].innerHTML = valor.cX;
-        aY[i].innerHTML = valor.aY;
-        bY[i].innerHTML = valor.bY;
-        cY[i].innerHTML = valor.cY;
-    }
-
-    for (var i = 0; i < aZ.length; i++) {
-        aZ[i].innerHTML = valor.aZ;
-        bZ[i].innerHTML = valor.bZ;
-        cZ[i].innerHTML = valor.cZ;
-    }
-    for (var i = 0; i < aN.length; i++) {
-        aN[i].innerHTML = valor.aN;
-        bN[i].innerHTML = valor.bN;
-        cN[i].innerHTML = valor.cN;
-    }
-
 }
 
 function animacao(...elementos) {
@@ -177,7 +233,7 @@ function animacao2(...elementos) {
 
 
 window.onload = function () {
-    Chamar();
+    TabelaMatriz();
     Calculo_D();
     Calculo_DX();
     Calculo_DY();

@@ -37,37 +37,7 @@
 
                 </div>
                 <span>FICARÁ =></span>
-                <div class="tabelaMatriz">
-                    <table class="matriz">
-                        <thead>
-                            <th>x</th>
-                            <th>y</th>
-                            <th>z</th>
-                            <th>N</th>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td class="aX"></td>
-                                <td class="aY"></td>
-                                <td class="aZ"></td>
-                                <td class="aN"></td>
-                            </tr>
-                            <tr><!--coluna de y-->
-                                <td class="bX"></td>
-                                <td class="bY"></td>
-                                <td class="bZ"></td>
-                                <td class="bN"></td>
-                            </tr>
-                            <tr><!--coluna de z-->
-                                <td class="cX"></td>
-                                <td class="cY"></td>
-                                <td class="cZ"></td>
-                                <td class="cN"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <div class="tabelaMatriz" id="tabela_Matriz"></div>
             </div>
             </p>
         </div>
@@ -83,46 +53,10 @@
                 </p>
             </div>
 
-            <div class="tabelaMatriz">
-                <table>
-                    <thead>
-                        <th>x</th>
-                        <th>y</th>
-                        <th>z</th>
-                        <th>x</th>
-                        <th>y</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="aX"></td>
-                            <td class="aY"></td>
-                            <td class="aZ"></td>
-                            <td class="aX"></td>
-                            <td class="aY"></td>
-                        </tr>
-                        <tr>
-                            <td class="bX"></td>
-                            <td class="bY"></td>
-                            <td class="bZ"></td>
-                            <td class="bX"></td>
-                            <td class="bY"></td>
-                        </tr>
-                        <tr>
-                            <td class="cX"></td>
-                            <td class="cY"></td>
-                            <td class="cZ"></td>
-                            <td class="cX"></td>
-                            <td class="cY"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div class="tabelaMatriz" id="tabela_D"></div>
             <div class="calculo">
-                <div><p>D = </p><p class="esquerda" id="D1_esquerda"></p> <p> - </p> <p class="direita" id="D1_direita"></p> </div>
-                <div><p>D = </p><p class="esquerda" id="D2_esquerda"></p> <p> - </p> <p class="direita" id="D2_direita"></p> </div>
-                <div><p>D = </p><p class="esquerda" id="D3_esquerda"></p> <p> - </p> <p class="direita" id="D3_direita"></p> </div>
+                <div class="calculo_D" id="calculo_D"></div>
             </div>
-            <p class="resultado" id="D"></p>
         </div>
 
 
@@ -136,47 +70,10 @@
                     independentes(N), faremos o mesmo calcula do passo anterior, ficará assim:
                 </p>
             </div>
-            <div class="tabelaMatriz">
-                <table>
-                    <thead>
-                        <th>N</th>
-                        <th>y</th>
-                        <th>z</th>
-                        <th>N</th>
-                        <th>y</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="aN"></td>
-                            <td class="aY"></td>
-                            <td class="aZ"></td>
-                            <td class="aN"></td>
-                            <td class="aY"></td>
-                        </tr>
-                        <tr>
-                            <td class="bN"></td>
-                            <td class="bY"></td>
-                            <td class="bZ"></td>
-                            <td class="bN"></td>
-                            <td class="bY"></td>
-                        </tr>
-                        <tr>
-                            <td class="cN"></td>
-                            <td class="cY"></td>
-                            <td class="cZ"></td>
-                            <td class="cN"></td>
-                            <td class="cY"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div class="tabelaMatriz" id="tabela_Dx"></div>
             <div class="calculo">
-                <div><p>Dx = </p><p class="esquerda" id="DX1_esquerda"></p> <p> - </p> <p class="direita" id="DX1_direita"></p> </div>
-                <div><p>Dx = </p><p class="esquerda" id="DX2_esquerda"></p> <p> - </p> <p class="direita" id="DX2_direita"></p> </div>
-                <div><p>Dx = </p><p class="esquerda" id="DX3_esquerda"></p> <p> - </p> <p class="direita" id="DX3_direita"></p> </div>
+                <div class="calculo_D" id="calculo_Dx"></div>
             </div>
-            <p class="resultado" id="DX"></p>
-
         </div>
 
         <div class="passos"><!--Matriz da DY-->
@@ -186,48 +83,13 @@
                     X vamos substituir as de Y e encontraremos o determinante da matriz de Y(Dy):
                 </p>
             </div>
-            <div class="tabelaMatriz">
-                <table>
-                    <thead>
-                        <th>x</th>
-                        <th>N</th>
-                        <th>z</th>
-                        <th>x</th>
-                        <th>N</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="aX"></td>
-                            <td class="aN"></td>
-                            <td class="aZ"></td>
-                            <td class="aX"></td>
-                            <td class="aN"></td>
-                        </tr>
-                        <tr>
-                            <td class="bX"></td>
-                            <td class="bN"></td>
-                            <td class="bZ"></td>
-                            <td class="bX"></td>
-                            <td class="bN"></td>
-                        </tr>
-                        <tr>
-                            <td class="cX"></td>
-                            <td class="cN"></td>
-                            <td class="cZ"></td>
-                            <td class="cX"></td>
-                            <td class="cN"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div class="tabelaMatriz" id="tabela_Dy"></div>
             <div class="calculo">
-                <div><p>Dy = </p><p class="esquerda" id="DY1_esquerda"></p> <p> - </p> <p class="direita" id="DY1_direita"></p> </div>
-                <div><p>Dy = </p><p class="esquerda" id="DY2_esquerda"></p> <p> - </p> <p class="direita" id="DY2_direita"></p> </div>
-                <div><p>Dy = </p><p class="esquerda" id="DY3_esquerda"></p> <p> - </p> <p class="direita" id="DY3_direita"></p> </div>
+                <div class="calculo_D" id="calculo_Dy"></div>
             </div>
-            <p class="resultado" id="DY"></p>
 
         </div>
+
 
         <div class="passos"><!--Matriz da DZ-->
             <div class="textoPassos">
@@ -236,47 +98,10 @@
                     e 4 para encontrar o determinante de Z(Dz):
                 </p>
             </div>
-            <div class="tabelaMatriz">
-                <table>
-                    <thead>
-                        <th>x</th>
-                        <th>y</th>
-                        <th>N</th>
-                        <th>x</th>
-                        <th>y</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="aX"></td>
-                            <td class="aY"></td>
-                            <td class="aN"></td>
-                            <td class="aX"></td>
-                            <td class="aY"></td>
-
-                        </tr>
-                        <tr>
-                            <td class="bX"></td>
-                            <td class="bY"></td>
-                            <td class="bN"></td>
-                            <td class="bX"></td>
-                            <td class="bY"></td>
-                        </tr>
-                        <tr>
-                            <td class="cX"></td>
-                            <td class="cY"></td>
-                            <td class="cN"></td>
-                            <td class="cX"></td>
-                            <td class="cY"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div class="tabelaMatriz" id="tabela_Dz"></div>
             <div class="calculo">
-                <div><p>Dz = </p><p class="esquerda" id="DZ1_esquerda"></p> <p> - </p> <p class="direita" id="DZ1_direita"></p> </div>
-                <div><p>Dz = </p><p class="esquerda" id="DZ2_esquerda"></p> <p> - </p> <p class="direita" id="DZ2_direita"></p> </div>
-                <div><p>Dz = </p><p class="esquerda" id="DZ3_esquerda"></p> <p> - </p> <p class="direita" id="DZ3_direita"></p> </div>
+                <div class="calculo_D" id="calculo_Dz"></div>
             </div>
-            <p class="resultado" id="DZ"></p>
         </div>
 
         <div class="passos">
@@ -304,7 +129,8 @@
         <div class="passos">
             <p class="textoPassos">
                 Essa é a Regra de Cramer para sistemas de equações lineares 3x3. </br> Lembre-se,
-                caso o determinante da matriz de coeficientes(D) for igual a zero, então não é possível aplicar a Regra
+                caso o determinante da matriz de coeficientes(D) for igual a zero, então não é possível aplicar a
+                Regra
                 de
                 Cramer para encontrar as soluções do sistema de equações lineares 3x3.
                 Isso ocorre porque a Regra de Cramer envolve a divisão de determinantes, como a divisão por zero é
@@ -312,14 +138,17 @@
                 dessa maneira. Nesse caso, é necessário utilizar outros métodos para resolver o sistema, como a
                 eliminação gaussiana ou a decomposição LU, por exemplo. Esses métodos são baseados em operações
                 elementares de linha na matriz
-                de coeficientes e são capazes de resolver sistemas de equações lineares mesmo quando o determinante é
+                de coeficientes e são capazes de resolver sistemas de equações lineares mesmo quando o determinante
+                é
                 zero.
             </p>
         </div>
         <div class="passos">
             <p class="textoPassos">
-                Agora que tal nos ajudar a melhorar cada vez mais este site e assim poder contribuir ainda mais para seu
-                aprendizado e de outros alunos.</br> Responda a pesquisa e nos conte um pouco sobre sua experiência por
+                Agora que tal nos ajudar a melhorar cada vez mais este site e assim poder contribuir ainda mais para
+                seu
+                aprendizado e de outros alunos.</br> Responda a pesquisa e nos conte um pouco sobre sua experiência
+                por
                 aqui clicando neste link " <a href="https://forms.gle/UghAhW3ixDDNRBfX8">PESQUISA DE EXPERIÊNCIA DO
                     USUÁRIO</a> "
             </p>

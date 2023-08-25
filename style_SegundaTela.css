@@ -1,5 +1,6 @@
 * {
     font-family: 'Merriweather', serif;
+    
 }
 
 html {
@@ -13,20 +14,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .container {
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    font-size: 1em;
     width: 60%;
-
-    @media screen and (max-width: 500px) {
-        width: 100%;
-        font-size: 0.5em;
-    }
 }
 
 .passos {
@@ -35,7 +29,7 @@ body {
     border-radius: 10px;
     padding: 20px;
     margin-top: 30px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
 }
@@ -46,25 +40,34 @@ body {
     justify-content: space-evenly;
 }
 
-#equacao p,
-span {
-    font-size: max(14px, 1vw);
-}
-
 .textoPassos {
     text-align: justify;
+    
+}
+.textoPassos{
+    font-size: 1rem;
 }
 
-.calculo div{
+@media screen and (max-width: 500px) {
+    .textoPassos {
+        font-size: 10px; /* Ajuste o tamanho desejado para telas menores */
+    }
+    .container{
+        width: 100%;
+    }
+}
+
+.calculo_D div{
     display: flex;
+    align-items: center;
     justify-content: center;
-    font-size: 1.2vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.3vw;
 }
 
-.calculo p{
+.calculo div{
     font-weight: bold;
 }
 
@@ -107,7 +110,7 @@ th {
 }
 
 td{
-    font-size: min(16px, 1.5em);
+    font-size: min(16px, 2vw);
 }
 
 td,
@@ -159,3 +162,4 @@ a {
 .creditos a {
     color: white;
 }
+
