@@ -4,44 +4,62 @@ var Determinante = ((valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * va
 
 //Passo a passo de como foi realizado o calculo do determinante
 function Calculo_D() {
-    let D1 = document.getElementById('D1');
-    let D2 = document.getElementById('D2');
-    let D3 = document.getElementById('D3');
+    let D1_esquerda = document.getElementById('D1_esquerda');
+    let D1_direita = document.getElementById('D1_direita');
+    let D2_esquerda = document.getElementById('D2_esquerda');
+    let D2_direita = document.getElementById('D2_direita');
+    let D3_esquerda = document.getElementById('D3_esquerda');
+    let D3_direita = document.getElementById('D3_direita');
     let D = document.getElementById('D');
 
-    D1.innerHTML = `D= ((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY})) - ((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX}))`;
-    D2.innerHTML = `D= (${valor.aX * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cY}) - (${valor.aY * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cX})`;
-    D3.innerHTML = `D= ${(valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)} - ${(valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX)}`;
+    D1_esquerda.innerHTML = `((${valor.aX} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cY}))`;
+    D1_direita.innerHTML = `((${valor.aY} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cX}))`;
+    D2_esquerda.innerHTML = `(${valor.aX * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cY})`;
+    D2_direita.innerHTML = `(${valor.aY * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cX})`;
+    D3_esquerda.innerHTML = `${(valor.aX * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cY)}`;
+    D3_direita.innerHTML = `${(valor.aY * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cX)}`;
     D.innerHTML = `D= ${Determinante}`;
 }
 
 function Calculo_DX() {
 
-    let DX1 = document.getElementById('DX1');
-    let DX2 = document.getElementById('DX2');
-    let DX3 = document.getElementById('DX3');
+    let DX1_esquerda = document.getElementById('DX1_esquerda');
+    let DX1_direita = document.getElementById('DX1_direita');
+    let DX2_esquerda = document.getElementById('DX2_esquerda');
+    let DX2_direita = document.getElementById('DX2_direita');
+    let DX3_esquerda = document.getElementById('DX3_esquerda');
+    let DX3_direita = document.getElementById('DX3_direita');
     let DX = document.getElementById('DX');
     let valorDeX = document.getElementById('valorDeX');
     var resultado = ((valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)) - ((valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN));
-    DX1.innerHTML = `Dx= ((${valor.aN} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cY})) - ((${valor.aY} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cN}))`;
-    DX2.innerHTML = `Dx= (${valor.aN * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cY}) - (${valor.aY * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cN})`;
-    DX3.innerHTML = `Dx= ${(valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)} - ${(valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN)}`;
+    DX1_esquerda.innerHTML = `((${valor.aN} * ${valor.bY} * ${valor.cZ}) + (${valor.aY} * ${valor.bZ} * ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cY}))`;
+    DX1_direita.innerHTML = `((${valor.aY} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ}* ${valor.cY}) + (${valor.aZ} * ${valor.bY} * ${valor.cN}))`;
+    DX2_esquerda.innerHTML = `(${valor.aN * valor.bY * valor.cZ} + ${valor.aY * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cY})`;
+    DX2_direita.innerHTML = `(${valor.aY * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cY} + ${valor.aZ * valor.bY * valor.cN})`;
+    DX3_esquerda.innerHTML = `${(valor.aN * valor.bY * valor.cZ) + (valor.aY * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cY)}`;
+    DX3_direita.innerHTML = `${(valor.aY * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cY) + (valor.aZ * valor.bY * valor.cN)}`;
     DX.innerHTML = `Dx= ${resultado}`;
     valorDeX.innerHTML = `${resultado}/${Determinante} então x = ${resultado / Determinante}`;
 }
 
 function Calculo_DY() {
 
-    let DY1 = document.getElementById('DY1');
-    let DY2 = document.getElementById('DY2');
-    let DY3 = document.getElementById('DY3');
+    let DY1_esquerda = document.getElementById('DY1_esquerda');
+    let DY1_direita = document.getElementById('DY1_direita');
+    let DY2_esquerda = document.getElementById('DY2_esquerda');
+    let DY2_direita = document.getElementById('DY2_direita');
+    let DY3_esquerda = document.getElementById('DY3_esquerda');
+    let DY3_direita = document.getElementById('DY3_direita');
     let DY = document.getElementById('DY');
     let valorDeY = document.getElementById('valorDeY');
 
     var resultado = ((valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)) - ((valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX));
-    DY1.innerHTML = `Dy= ((${valor.aX} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cN})) - ((${valor.aN} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cX}))`;
-    DY2.innerHTML = `Dy=  (${valor.aX * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cN}) - (${valor.aN * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cX})`;
-    DY3.innerHTML = `Dy=  ${(valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)} - ${(valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX)}`;
+    DY1_esquerda.innerHTML = `((${valor.aX} * ${valor.bN} * ${valor.cZ}) + (${valor.aN} * ${valor.bZ} * ${valor.cX}) + (${valor.aZ} * ${valor.bX} * ${valor.cN}))`;
+    DY1_direita.innerHTML = `((${valor.aN} * ${valor.bX} * ${valor.cZ}) + (${valor.aX} * ${valor.bZ}* ${valor.cN}) + (${valor.aZ} * ${valor.bN} * ${valor.cX}))`;
+    DY2_esquerda.innerHTML = `(${valor.aX * valor.bN * valor.cZ} + ${valor.aN * valor.bZ * valor.cX} + ${valor.aZ * valor.bX * valor.cN})`;
+    DY2_direita.innerHTML = `(${valor.aN * valor.bX * valor.cZ} + ${valor.aX * valor.bZ * valor.cN} + ${valor.aZ * valor.bN * valor.cX})`;
+    DY3_esquerda.innerHTML = `${(valor.aX * valor.bN * valor.cZ) + (valor.aN * valor.bZ * valor.cX) + (valor.aZ * valor.bX * valor.cN)}`;
+    DY3_direita.innerHTML = `${(valor.aN * valor.bX * valor.cZ) + (valor.aX * valor.bZ * valor.cN) + (valor.aZ * valor.bN * valor.cX)}`;
     DY.innerHTML = `Dy=  ${resultado}`;
     valorDeY.innerHTML = `${resultado}/${Determinante} então y = ${resultado / Determinante}`;
 
@@ -49,15 +67,21 @@ function Calculo_DY() {
 
 function Calculo_DZ() {
 
-    let DZ1 = document.getElementById('DZ1');
-    let DZ2 = document.getElementById('DZ2');
-    let DZ3 = document.getElementById('DZ3');
+    let DZ1_esquerda = document.getElementById('DZ1_esquerda');
+    let DZ1_direita = document.getElementById("DZ1_direita");
+    let DZ2_esquerda = document.getElementById('DZ2_esquerda');
+    let DZ2_direita = document.getElementById("DZ2_direita");
+    let DZ3_esquerda = document.getElementById('DZ3_esquerda');
+    let DZ3_direita = document.getElementById("DZ3_direita");
     let DZ = document.getElementById('DZ');
     let valorDeZ = document.getElementById('valorDeZ');
     var resultado = ((valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)) - ((valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX));
-    DZ1.innerHTML = `Dz= ((${valor.aX} * ${valor.bY} * ${valor.cN}) + (${valor.aY} * ${valor.bN} * ${valor.cX}) + (${valor.aN} * ${valor.bX} * ${valor.cY})) - ((${valor.aY} * ${valor.bX} * ${valor.cN}) + (${valor.aX} * ${valor.bN}* ${valor.cY}) + (${valor.aN} * ${valor.bY} * ${valor.cX}))`;
-    DZ2.innerHTML = `Dz= (${valor.aX * valor.bY * valor.cN} + ${valor.aY * valor.bN * valor.cX} + ${valor.aN * valor.bX * valor.cY}) - (${valor.aY * valor.bX * valor.cN} + ${valor.aX * valor.bN * valor.cY} + ${valor.aN * valor.bY * valor.cX})`;
-    DZ3.innerHTML = `Dz= ${(valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)} - ${(valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX)}`;
+    DZ1_esquerda.innerHTML = ` ((${valor.aX} * ${valor.bY} * ${valor.cN}) + (${valor.aY} * ${valor.bN} * ${valor.cX}) + (${valor.aN} * ${valor.bX} * ${valor.cY})) `;
+    DZ1_direita.innerHTML = ` ((${valor.aY} * ${valor.bX} * ${valor.cN}) + (${valor.aX} * ${valor.bN}* ${valor.cY}) + (${valor.aN} * ${valor.bY} * ${valor.cX}))`;
+    DZ2_esquerda.innerHTML = ` (${valor.aX * valor.bY * valor.cN} + ${valor.aY * valor.bN * valor.cX} + ${valor.aN * valor.bX * valor.cY})`;
+    DZ2_direita.innerHTML = `(${valor.aY * valor.bX * valor.cN} + ${valor.aX * valor.bN * valor.cY} + ${valor.aN * valor.bY * valor.cX})`;
+    DZ3_esquerda.innerHTML = `  ${(valor.aX * valor.bY * valor.cN) + (valor.aY * valor.bN * valor.cX) + (valor.aN * valor.bX * valor.cY)}`;
+    DZ3_direita.innerHTML = `${(valor.aY * valor.bX * valor.cN) + (valor.aX * valor.bN * valor.cY) + (valor.aN * valor.bY * valor.cX)}`;
     DZ.innerHTML = `Dz= ${resultado}`;
     valorDeZ.innerHTML = `${resultado}/${Determinante} então z = ${resultado / Determinante}`;
 }

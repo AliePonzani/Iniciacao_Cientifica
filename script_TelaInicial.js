@@ -77,7 +77,7 @@ const Calcular = () => {
         }
         else {
 
-            cliqueAqui.href = "https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html"; 
+            cliqueAqui.href = "SegundaTela.html"; //https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html 
             let x = (((aN * bY * cZ) + (aY * bZ * cN) + (aZ * bN * cY)) - ((aY * bN * cZ) + (aN * bZ * cY) + (aZ * bY * cN))) / dd;
             let y = (((aX * bN * cZ) + (aN * bZ * cX) + (aZ * bX * cN)) - ((aN * bX * cZ) + (aX * bZ * cN) + (aZ * bN * cX))) / dd;
             let z = (((aX * bY * cN) + (aY * bN * cX) + (aN * bX * cY)) - ((aY * bX * cN) + (aX * bN * cY) + (aN * bY * cX))) / dd;
