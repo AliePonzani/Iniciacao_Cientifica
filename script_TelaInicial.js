@@ -48,17 +48,17 @@ const Calcular = () => {
     //Tenha como base que "a" representa a primeira linha da matriz, "b" a segunda linha e "c" a terceira linha
     //Assim como "X" representa os valores de "x", "Y" de "y", "Z" de "z" e "N" o "total".
     var aX = document.getElementById('aX').value;
-    var aY = document.getElementById('bY').value;
-    var aZ = document.getElementById('cZ').value;
-    var aN = document.getElementById('dN').value;
-    var bX = document.getElementById('eX').value;
-    var bY = document.getElementById('fY').value;
-    var bZ = document.getElementById('gZ').value;
-    var bN = document.getElementById('hN').value;
-    var cX = document.getElementById('iX').value;
-    var cY = document.getElementById('jY').value;
-    var cZ = document.getElementById('kZ').value;
-    var cN = document.getElementById('lN').value;
+    var aY = document.getElementById('aY').value;
+    var aZ = document.getElementById('aZ').value;
+    var aN = document.getElementById('aN').value;
+    var bX = document.getElementById('bX').value;
+    var bY = document.getElementById('bY').value;
+    var bZ = document.getElementById('bZ').value;
+    var bN = document.getElementById('bN').value;
+    var cX = document.getElementById('cX').value;
+    var cY = document.getElementById('cY').value;
+    var cZ = document.getElementById('cZ').value;
+    var cN = document.getElementById('cN').value;
     const cliqueAqui = document.querySelector('#cliqueAqui');
 
     valores = { aX: aX, bX: bX, cX: cX, aY: aY, bY: bY, cY: cY, aZ: aZ, bZ: bZ, cZ: cZ, aN: aN, bN: bN, cN: cN };
@@ -77,7 +77,7 @@ const Calcular = () => {
         }
         else {
 
-            cliqueAqui.href = "https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html"; 
+            cliqueAqui.href = "SegundaTela.html";//"https://alieponzani.github.io/Iniciacao_Cientifica/SegundaTela.html"; 
             let x = (((aN * bY * cZ) + (aY * bZ * cN) + (aZ * bN * cY)) - ((aY * bN * cZ) + (aN * bZ * cY) + (aZ * bY * cN))) / dd;
             let y = (((aX * bN * cZ) + (aN * bZ * cX) + (aZ * bX * cN)) - ((aN * bX * cZ) + (aX * bZ * cN) + (aZ * bN * cX))) / dd;
             let z = (((aX * bY * cN) + (aY * bN * cX) + (aN * bX * cY)) - ((aY * bX * cN) + (aX * bN * cY) + (aN * bY * cX))) / dd;
