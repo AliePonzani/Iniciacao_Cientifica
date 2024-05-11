@@ -50,7 +50,7 @@ body {
 
 @media screen and (max-width: 500px) {
     .textoPassos {
-        font-size: 10px; /* Ajuste o tamanho desejado para telas menores */
+        font-size: 10px;
     }
     .container{
         width: 100%;
@@ -118,28 +118,6 @@ th {
     padding: 10px;
     border-radius: 12%;
     
-}
-
-@keyframes destaque {
-    from {
-        background-color: white;
-    }
-
-    to {
-        background-color: purple;
-        color: white;
-    }
-}
-
-@keyframes destaque2 {
-    from {
-        background-color: white;
-    }
-
-    to {
-        background-color: rgb(41, 4, 206);
-        color: white;
-    }
 }
 
 #prova,
