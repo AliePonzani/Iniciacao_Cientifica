@@ -149,9 +149,9 @@ window.onload = function () {
     let totalLinha1 = (valores.aX * x) + (valores.aY * y) + (valores.aZ * z);
     let totalLinha2 = (valores.bX * x) + (valores.bY * y) + (valores.bZ * z);
     let totalLinha3 = (valores.cX * x) + (valores.cY * y) + (valores.cZ * z);
-    document.getElementById("valorDeX").innerHTML = `${dadosDoX.valor} ÷ ${D} então x = ${totalLinha1}`
-    document.getElementById("valorDeY").innerHTML = `${dadosDoY.valor} ÷ ${D} então y = ${totalLinha2}`
-    document.getElementById("valorDeZ").innerHTML = `${dadosDoZ.valor} ÷ ${D} então z = ${totalLinha3}`
+    document.getElementById("valorDeX").innerHTML = `${dadosDoX.valor} ÷ ${D} então x = ${x}`
+    document.getElementById("valorDeY").innerHTML = `${dadosDoY.valor} ÷ ${D} então y = ${y}`
+    document.getElementById("valorDeZ").innerHTML = `${dadosDoZ.valor} ÷ ${D} então z = ${z}`
 
     let prova = document.getElementById('prova');
     prova.innerHTML = `(${valores.aX}*${x}) + (${valores.aY}*${y}) + (${valores.aZ}*${z}) = ${totalLinha1}<br>
