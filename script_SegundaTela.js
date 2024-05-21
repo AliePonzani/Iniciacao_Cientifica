@@ -38,7 +38,7 @@ async function alterarCorCelulas(nometabela, matriz) {
     var cor = '';
     for (let i = 0; i < matriz.length; i++) {
         for (let j = 0; j < matriz.length; j++) {
-            cor = "blue";
+            cor = "purple";
             let index = (matriz[0].length * j) + (i + j);
             cells[index].style.backgroundColor = cor;
             await new Promise(resolve => setTimeout(resolve, 800));
@@ -48,7 +48,7 @@ async function alterarCorCelulas(nometabela, matriz) {
 
     for (let i = matriz[0].length - 1; i >= matriz.length - 1; i--) { //coluna
         for (let j = 0; j < matriz.length; j++) {
-            cor = "purple";
+            cor = "blue";
             let index = (matriz[0].length * j) + (i - j);
             cells[index].style.backgroundColor = cor;
             await new Promise(resolve => setTimeout(resolve, 800));
